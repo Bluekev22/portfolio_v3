@@ -1,5 +1,19 @@
+@font-face {
+  font-family: 'proximanova-regular';
+  src: url('../src/fonts/proximanova_regular_macroman/proximanova-regular-webfont.woff2')
+      format('woff2'),
+    url('../src/fonts/proximanova_regular_macroman/proximanova-regular-webfont.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  font-family: 'proximanova-regular';
 }
+
