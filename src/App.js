@@ -1,8 +1,16 @@
 import "./App.css";
+import { useRef, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
+import Navbar from "./components/home/Navbar";
+import { gsap } from "gsap";
+import { RoughEase } from "gsap/EasePack";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(ScrollTrigger, TextPlugin, RoughEase);
 
 const useStyles = makeStyles(() => ({
   home: {
@@ -10,56 +18,63 @@ const useStyles = makeStyles(() => ({
     minHeight: "1080px",
     color: "white",
   },
-  linkContainer: { marginTop: "3vh" },
-  link: {
-    textDecoration: "none",
-    fontSize: "28px",
-    marginRight: "3vw",
-    position: "relative",
-
-    "&:active": {
-      color: "white",
-    },
-    "&:visited": {
-      color: "white",
-    },
-
-    "&::before": {
-      content: "''",
-      position: "absolute",
-      width: "100%",
-      height: "2px",
-      bottom: "-8px",
-      backgroundColor: "#124ef3",
-      webkitTransform: "scaleX(0)",
-      transform: "scaleX(0)",
-      webkitTransformOrigin: "top left",
-      transformOrigin: "top left",
-      webkitTransition: "-webkit-transform 0.3s ease",
-      transition: "-webkit-transform 0.3s ease",
-      transition: "transform 0.3s ease",
-      transition: "transform 0.3s ease, -webkit-transform 0.3s ease",
-    },
-    "&:hover": {
-      color: "#124ef3",
-      "&::before": {
-        transform: "scale(1)",
-        webkitTransform: "scale(1)",
-      },
-    },
-  },
 
   greetingContainer: {
-    background: "blue",
+    marginTop: "15vh",
   },
   name: {
-    fontSize: "100px",
+    fontSize: "6vw",
     textAlign: "center",
+    marginLeft: "10vw",
+  },
+  aboutContainer: {
+    backgroundImage: "linear-gradient(90deg, #0048f0 0%, #00b2f0 100%)",
+    WebkitBackgroundClip: "text",
+    MozBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    mozTextFillColor: "transparent",
+  },
+  about: {
+    fontSize: "4vw",
+    marginLeft: "10vw",
+  },
+  text: {
+    fontSize: "4vw",
+  },
+  cursor: {
+    fontSize: "4vw",
+    marginLeft: ".5vw",
+    backgroundImage: "linear-gradient(90deg, #00b2f0 0%,#00b2f0 100%)",
+    WebkitBackgroundClip: "text",
+    MozBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    mozTextFillColor: "transparent",
   },
 }));
 
 function App() {
   const classes = useStyles();
+  const cursorRef = useRef();
+  const textRef = useRef();
+
+  const words = ["Developer.", "Designer.", "Creator."];
+
+  useEffect(() => {
+    gsap.to(cursorRef.current, {
+      opacity: 0,
+      ease: "power2.inOut",
+      repeat: -1,
+      duration: 0.85,
+    });
+    let masterTl = gsap.timeline({ repeat: -1 });
+
+    words.forEach((word) => {
+      let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+      tl.to(textRef.current, { duration: 1.5, text: word });
+      masterTl.add(tl);
+    });
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -77,35 +92,7 @@ function App() {
             justifyContent="flex-start"
             alignItems="center"
           >
-            <Grid
-              container
-              item
-              className={classes.linkContainer}
-              direction="row"
-              justifyContent="flex-end"
-              alignItems="center"
-            >
-              <Grid item>
-                <Link className={classes.link} to="#projects">
-                  PROJECTS
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link className={classes.link} to="#skills">
-                  SKILLS
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link className={classes.link} to="#about">
-                  ABOUT
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link className={classes.link} to="#footer">
-                  CONTACT
-                </Link>
-              </Grid>
-            </Grid>
+            <Navbar />
             <Grid
               container
               item
@@ -116,12 +103,14 @@ function App() {
               <Grid
                 xl={6}
                 lg={6}
+                md={6}
+                sm={6}
                 container
                 item
                 className={classes.greetingContainer}
                 direction="column"
                 justifyContent="center"
-                alignItems="center"
+                alignItems="flex-start"
               >
                 <Grid item className={classes.name}>
                   KEVIN
@@ -129,10 +118,27 @@ function App() {
                 <Grid item className={classes.name}>
                   SHANK
                 </Grid>
-                <Grid item>I'm a...</Grid>
+                <Grid
+                  container
+                  item
+                  direction="row"
+                  justifyContent="flex-start"
+                  alignItems="baseline"
+                  className={classes.aboutContainer}
+                >
+                  <Grid item className={classes.about}>
+                    The &nbsp;
+                  </Grid>
+                  <Grid item className={classes.text}>
+                    <p ref={textRef}></p>
+                  </Grid>
+                  <Grid item className={classes.cursor} ref={cursorRef}>
+                    _
+                  </Grid>
+                </Grid>
               </Grid>
 
-              <Grid item xl={6} lg={6}>
+              <Grid item xl={6} lg={6} md={6} sm={6}>
                 hi
               </Grid>
             </Grid>
