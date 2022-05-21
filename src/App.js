@@ -1,25 +1,38 @@
-import "./App.css";
-import { useRef, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import "./App.css"
+import { useRef, useEffect } from "react"
+import { BrowserRouter } from "react-router-dom"
+import { Grid } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { TextPlugin } from "gsap/TextPlugin"
+import Navbar from "./components/home/Navbar"
+import Hi from "./components/home/Hi"
 
-import Navbar from "./components/home/Navbar";
-import { gsap } from "gsap";
-import { RoughEase } from "gsap/EasePack";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
-
-gsap.registerPlugin(ScrollTrigger, TextPlugin, RoughEase);
+gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
 const useStyles = makeStyles(() => ({
   home: {
-    background: "#01020f",
-    minHeight: "1080px",
+    background: "#00081a",
+    minHeight: "750px",
     color: "white",
-  },
+    position: "relative",
 
-  greetingContainer: {
+    "&::before": {
+      position: "absolute",
+      top: "160px",
+      left: "0",
+      height: "90%",
+      width: "100%",
+      content: "''",
+      backgroundColor: "#00081a",
+      transform: "skewY(5deg)",
+    },
+  },
+  main: {
+    perspective: "800px",
+  },
+  nameContainer: {
     marginTop: "15vh",
   },
   name: {
@@ -27,37 +40,40 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     marginLeft: "10vw",
   },
-  aboutContainer: {
+  titlesContainer: {
     backgroundImage: "linear-gradient(90deg, #0048f0 0%, #00b2f0 100%)",
     WebkitBackgroundClip: "text",
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     mozTextFillColor: "transparent",
   },
-  about: {
+  titles: {
     fontSize: "4vw",
     marginLeft: "10vw",
   },
   text: {
     fontSize: "4vw",
   },
+  thing: {},
   cursor: {
-    fontSize: "4vw",
+    width: "2.75vw",
+    height: "5vw",
     marginLeft: ".5vw",
-    backgroundImage: "linear-gradient(90deg, #00b2f0 0%,#00b2f0 100%)",
-    WebkitBackgroundClip: "text",
-    MozBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    mozTextFillColor: "transparent",
+    backgroundColor: "rgba(0,157,249,.65)",
   },
-}));
+  projects: {
+    background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
+    minHeight: "1080px",
+    color: "#01020f",
+  },
+}))
 
 function App() {
-  const classes = useStyles();
-  const cursorRef = useRef();
-  const textRef = useRef();
+  const classes = useStyles()
+  const cursorRef = useRef()
+  const textRef = useRef()
 
-  const words = ["Developer.", "Designer.", "Creator."];
+  const words = ["Developer.", "Designer.", "Creator."]
 
   useEffect(() => {
     gsap.to(cursorRef.current, {
@@ -65,15 +81,16 @@ function App() {
       ease: "power2.inOut",
       repeat: -1,
       duration: 0.85,
-    });
-    let masterTl = gsap.timeline({ repeat: -1 });
+    })
+
+    let masterTl = gsap.timeline({ repeat: -1 })
 
     words.forEach((word) => {
-      let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
-      tl.to(textRef.current, { duration: 1.5, text: word });
-      masterTl.add(tl);
-    });
-  }, []);
+      let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 })
+      tl.to(textRef.current, { duration: 1.5, text: word })
+      masterTl.add(tl)
+    })
+  }, [])
 
   return (
     <BrowserRouter>
@@ -99,15 +116,16 @@ function App() {
               direction="row"
               justifyContent="space-between"
               alignItems="center"
+              className={classes.main}
             >
               <Grid
                 xl={6}
                 lg={6}
-                md={6}
-                sm={6}
+                md={5}
+                sm={5}
                 container
                 item
-                className={classes.greetingContainer}
+                className={classes.nameContainer}
                 direction="column"
                 justifyContent="center"
                 alignItems="flex-start"
@@ -118,35 +136,41 @@ function App() {
                 <Grid item className={classes.name}>
                   SHANK
                 </Grid>
+                <Grid item className={classes.thing}></Grid>
                 <Grid
                   container
                   item
                   direction="row"
                   justifyContent="flex-start"
                   alignItems="baseline"
-                  className={classes.aboutContainer}
+                  className={classes.titlesContainer}
                 >
-                  <Grid item className={classes.about}>
+                  <Grid item className={classes.titles}>
                     The &nbsp;
                   </Grid>
                   <Grid item className={classes.text}>
                     <p ref={textRef}></p>
                   </Grid>
                   <Grid item className={classes.cursor} ref={cursorRef}>
-                    _
+                    <p></p>
                   </Grid>
                 </Grid>
               </Grid>
-
-              <Grid item xl={6} lg={6} md={6} sm={6}>
-                hi
-              </Grid>
+              <Hi />
             </Grid>
           </Grid>
+          <Grid
+            container
+            item
+            className={classes.projects}
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="center"
+          ></Grid>
         </Grid>
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

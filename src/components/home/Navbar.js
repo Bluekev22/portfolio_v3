@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
       width: "100%",
       height: "2px",
       bottom: "-8px",
-      backgroundColor: "#00b2f0",
+      backgroundColor: "#009df9",
       webkitTransform: "scaleX(0)",
       transform: "scaleX(0)",
       webkitTransformOrigin: "top left",
@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
       transition: "transform 0.35s ease, -webkit-transform 0.35s ease",
     },
     "&:hover": {
-      color: "#00b2f0",
+      color: "#009df9",
       "&::before": {
         transform: "scale(1)",
         webkitTransform: "scale(1)",
