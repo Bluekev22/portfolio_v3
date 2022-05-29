@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TextPlugin } from "gsap/TextPlugin"
 import Navbar from "./components/home/Navbar"
 import Hi from "./components/home/Hi"
+import Projects from "./components/projects/Projects"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
@@ -17,7 +18,6 @@ const useStyles = makeStyles(() => ({
     minHeight: "750px",
     color: "white",
     position: "relative",
-
     "&::before": {
       position: "absolute",
       top: "160px",
@@ -27,6 +27,7 @@ const useStyles = makeStyles(() => ({
       content: "''",
       backgroundColor: "#00081a",
       transform: "skewY(5deg)",
+      zIndex: "0",
     },
   },
   main: {
@@ -61,7 +62,18 @@ const useStyles = makeStyles(() => ({
     marginLeft: ".5vw",
     backgroundColor: "rgba(0,157,249,.65)",
   },
-  projects: {
+
+  skills: {
+    background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
+    minHeight: "1080px",
+    color: "#01020f",
+  },
+  about: {
+    background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
+    minHeight: "1080px",
+    color: "#01020f",
+  },
+  contact: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
     color: "#01020f",
@@ -159,10 +171,27 @@ function App() {
               <Hi />
             </Grid>
           </Grid>
+          <Projects />
           <Grid
             container
             item
-            className={classes.projects}
+            className={classes.skills}
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="center"
+          ></Grid>
+          <Grid
+            container
+            item
+            className={classes.about}
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="center"
+          ></Grid>
+          <Grid
+            container
+            item
+            className={classes.contact}
             direction="column"
             justifyContent="flex-start"
             alignItems="center"
