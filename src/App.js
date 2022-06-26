@@ -27,6 +27,7 @@ const useStyles = makeStyles(() => ({
       content: "''",
       backgroundColor: "#00081a",
       transform: "skewY(5deg)",
+      zIndex: 0,
      
       
     },
@@ -37,8 +38,9 @@ const useStyles = makeStyles(() => ({
       height: "90%",
       width: "100%",
       content: "''",
-      backgroundColor: "#00081a",
+      background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
       transform: "skewY(5deg)",
+      
      
     },
   },
@@ -79,20 +81,23 @@ const useStyles = makeStyles(() => ({
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
     color: "#01020f",
+    zIndex: 2,
     "&::before": {
       position: "absolute",
-      top: "10750px",
+      top: "1150vh",
       left: "0",
       height: "90%",
       width: "100%",
       content: "''",
-      backgroundColor: "#00081a",
+      background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
       transform: "skewY(-10deg)",
      
     },
-    skillsHeader: {
-      color: 'white',
-    }
+    
+  },
+  skillsHeader: {
+    color: 'white',
+    zIndex: 2,
   },
   about: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
