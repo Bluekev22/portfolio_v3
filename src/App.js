@@ -27,7 +27,19 @@ const useStyles = makeStyles(() => ({
       content: "''",
       backgroundColor: "#00081a",
       transform: "skewY(5deg)",
-      zIndex: "0",
+     
+      
+    },
+    "&::after": {
+      position: "absolute",
+      top: "10650px",
+      left: "0",
+      height: "90%",
+      width: "100%",
+      content: "''",
+      backgroundColor: "#00081a",
+      transform: "skewY(5deg)",
+     
     },
   },
   main: {
@@ -67,6 +79,20 @@ const useStyles = makeStyles(() => ({
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
     color: "#01020f",
+    "&::before": {
+      position: "absolute",
+      top: "10750px",
+      left: "0",
+      height: "90%",
+      width: "100%",
+      content: "''",
+      backgroundColor: "#00081a",
+      transform: "skewY(-10deg)",
+     
+    },
+    skillsHeader: {
+      color: 'white',
+    }
   },
   about: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
@@ -179,7 +205,7 @@ function App() {
             direction="column"
             justifyContent="flex-start"
             alignItems="center"
-          ></Grid>
+          ><h1 className={classes.skillsHeader}>SKILLS</h1></Grid>
           <Grid
             container
             item

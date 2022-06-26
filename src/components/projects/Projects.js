@@ -23,6 +23,7 @@ const useStyles = makeStyles(() => ({
     color: "#01020f",
     zIndex: "-1",
     position: "relative",
+    
   },
   projectsHeader: { marginTop: "20vh", fontSize: "6vw" },
   gif: {
