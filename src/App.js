@@ -1,5 +1,5 @@
 import "./App.css"
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import { BrowserRouter } from "react-router-dom"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
@@ -15,14 +15,14 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin)
 const useStyles = makeStyles(() => ({
   home: {
     background: "#00081a",
-    minHeight: "750px",
+ zIndex: 4,
     color: "white",
     position: "relative",
     "&::before": {
       position: "absolute",
-      top: "160px",
+      top: "20vh",
       left: "0",
-      height: "90%",
+      height: "100%",
       width: "100%",
       content: "''",
       backgroundColor: "#00081a",
@@ -33,14 +33,14 @@ const useStyles = makeStyles(() => ({
     },
     "&::after": {
       position: "absolute",
-      top: "10650px",
+      top: "calc(9700px + 65vh)",
       left: "0",
       height: "90%",
       width: "100%",
       content: "''",
-      background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
+      background: "pink",
       transform: "skewY(5deg)",
-      
+      zIndex: 0,
      
     },
   },
@@ -81,23 +81,22 @@ const useStyles = makeStyles(() => ({
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
     color: "#01020f",
-    zIndex: 2,
     "&::before": {
       position: "absolute",
-      top: "1150vh",
+      top: "10800px",
       left: "0",
       height: "90%",
       width: "100%",
       content: "''",
       background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
       transform: "skewY(-10deg)",
-     
+      zIndex: 0,
     },
     
   },
   skillsHeader: {
     color: 'white',
-    zIndex: 2,
+    zIndex: 3,
   },
   about: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
@@ -115,6 +114,16 @@ function App() {
   const classes = useStyles()
   const cursorRef = useRef()
   const textRef = useRef()
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight
+    })
+  }
 
   const words = ["Developer.", "Designer.", "Creator."]
 
@@ -126,6 +135,8 @@ function App() {
       duration: 0.85,
     })
 
+    
+
     let masterTl = gsap.timeline({ repeat: -1 })
 
     words.forEach((word) => {
@@ -134,6 +145,15 @@ function App() {
       masterTl.add(tl)
     })
   }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', setDimension);
+    console.log(screenSize)
+    return(() => {
+  
+        window.removeEventListener('resize', setDimension);
+    })
+  }, [screenSize])
 
   return (
     <BrowserRouter>
