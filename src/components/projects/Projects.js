@@ -23,26 +23,95 @@ const useStyles = makeStyles(() => ({
     color: "#01020f",
     zIndex: 3,
     position: "relative",
-    
   },
-  projectsHeader: { marginTop: "30vh", fontSize: "6vw" },
+  projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#00081a" },
+  image: {
+    marginTop: "10vh",
+  },
   gif: {
     marginTop: "10vh",
-    opactiy: "0",
-    visibility: "hidden",
   },
-  projectContainer: {
+  betterBuyContainer: {
     position: "absolute",
-    top: "35vh",
-  },
-  GO: {
-    fontSize: "6vw",
-    opactiy: "0",
+    top: "43vh",
+    zIndex: 4,
     visibility: "hidden",
-    color: "#01020f",
+    opacity: 0,
+  },
+  goldenFlightsContainer: {
+    position: "absolute",
+    top: "43vh",
+    zIndex: 4,
+    visibility: "hidden",
+    opacity: 0,
+  },
+  moviesContainer: {
+    position: "absolute",
+    top: "43vh",
+    zIndex: 4,
+    visibility: "hidden",
+    opacity: 0,
+  },
+  bookSearchContainer: {
+    position: "absolute",
+    top: "43vh",
+    zIndex: 4,
+    visibility: "hidden",
+    opacity: 0,
+  },
+  betterBuyAnchor: {
     textDecoration: "none",
+    cursor: "grab",
     "&:hover": {
       textDecoration: "underline",
+      textDecorationColor: "red",
+    },
+  },
+  GoldenFlightsAnchor: { textDecoration: "none" },
+  moviesAnchor: { textDecoration: "none" },
+  bookSearchAnchor: { textDecoration: "none" },
+  betterBuyGo: {
+    fontSize: "6vw",
+    opactiy: "0",
+
+    color: "#f2f5ff",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+      textDecorationColor: "#f2f5ff",
+    },
+  },
+  goldenFlightsGo: {
+    fontSize: "6vw",
+    opactiy: "0",
+
+    color: "#01020f",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+      textDecorationColor: "red",
+    },
+  },
+  moviesGo: {
+    fontSize: "6vw",
+    opactiy: "0",
+
+    color: "#01020f",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+      textDecorationColor: "red",
+    },
+  },
+  bookSearchGo: {
+    fontSize: "6vw",
+    opactiy: "0",
+
+    color: "#01020f",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+      textDecorationColor: "red",
     },
   },
 }))
@@ -50,19 +119,14 @@ const useStyles = makeStyles(() => ({
 const Projects = () => {
   const classes = useStyles()
   const projectsRef = useRef()
-  const betterBuyRef = useRef()
-  const betterBuyGIFRef = useRef()
-  const betterBuyGORef = useRef()
+  const betterBuyContainerRef = useRef()
+
   const projectsHeaderRef = useRef()
-  const goldenFlightsRef = useRef()
-  const goldenFlightsGIFRef = useRef()
-  const goldenFlightsGORef = useRef()
-  const MoviesRef = useRef()
-  const MoveTowardsTheMoviesGIFRef = useRef()
-  const MoviesGORef = useRef()
-  const BookSearchRef = useRef()
-  const BookSearchEngineGIFRef = useRef()
-  const BookSearchGORef = useRef()
+  const goldenFlightsContainerRef = useRef()
+
+  const moviesContainerRef = useRef()
+
+  const bookSearchContainerRef = useRef()
 
   useEffect(() => {
     const tl = gsap
@@ -77,23 +141,21 @@ const Projects = () => {
           pinSpacing: true,
         },
       })
-      .to(projectsRef.current, { background: "#0b3278" })
+      .to(projectsRef.current, { background: "#9bb0d2" })
       .to(
         projectsHeaderRef.current,
         {
           text: { value: "Better Buy", type: "diff" },
+          color: "#0b3278",
         },
         "-=0.5"
       )
 
-      .to(betterBuyGIFRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(betterBuyRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(betterBuyGORef.current, { autoAlpha: 1 }, "-=0.5")
+      .to(betterBuyContainerRef.current, { autoAlpha: 1 }, "-=0.5")
+
       .to({}, { duration: 2 })
       .to(projectsRef.current, { background: "pink" })
-      .to(betterBuyGIFRef.current, { autoAlpha: 0 }, "-=0.5")
-      .to(betterBuyRef.current, { autoAlpha: 0 }, "-=0.5")
-      .to(betterBuyGORef.current, { autoAlpha: 0 }, "-=0.5")
+      .to(betterBuyContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
@@ -102,14 +164,10 @@ const Projects = () => {
         },
         "-=0.5"
       )
-      .to(goldenFlightsGIFRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(goldenFlightsRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(goldenFlightsGORef.current, { autoAlpha: 1, color: "gold" }, "-=0.5")
+      .to(goldenFlightsContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
       .to(projectsRef.current, { background: "orange" })
-      .to(goldenFlightsGIFRef.current, { autoAlpha: 0 }, "-=0.5")
-      .to(goldenFlightsRef.current, { autoAlpha: 0 }, "-=0.5")
-      .to(goldenFlightsGORef.current, { autoAlpha: 0 }, "-=0.5")
+      .to(goldenFlightsContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
@@ -118,13 +176,9 @@ const Projects = () => {
         },
         "-=0.5"
       )
-      .to(MoveTowardsTheMoviesGIFRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(MoviesRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(MoviesGORef.current, { autoAlpha: 1, color: "blue" }, "-=0.5")
+      .to(moviesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(MoveTowardsTheMoviesGIFRef.current, { autoAlpha: 0 }, "-=0.5")
-      .to(MoviesRef.current, { autoAlpha: 0 }, "-=0.5")
-      .to(MoviesGORef.current, { autoAlpha: 0 }, "-=0.5")
+      .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
@@ -133,9 +187,8 @@ const Projects = () => {
         },
         "-=0.5"
       )
-      .to(BookSearchEngineGIFRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(BookSearchRef.current, { autoAlpha: 1 }, "-=0.5")
-      .to(BookSearchGORef.current, { autoAlpha: 1, color: "pink" }, "-=0.5")
+      .to(moviesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
+
       .to({}, { duration: 2 })
   }, [])
 
@@ -161,25 +214,25 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
+        className={classes.betterBuyContainer}
+        ref={betterBuyContainerRef}
       >
         <Grid item>
           <img
-            className={classes.gif}
+            className={classes.image}
             style={{ width: "30vw" }}
             src={BetterBuy}
-            ref={betterBuyRef}
             alt=""
           />
         </Grid>
         <Grid item>
           <a
-            className={classes.GO}
-            ref={betterBuyGORef}
             href="https://better-buy-shop.herokuapp.com/"
             target="_blank"
             rel="noreferrer"
+            className={classes.betterBuyAnchor}
           >
-            <h5>GO</h5>
+            <h5 className={classes.betterBuyGo}>GO</h5>
           </a>
         </Grid>
         <Grid item>
@@ -187,7 +240,6 @@ const Projects = () => {
             className={classes.gif}
             style={{ width: "30vw" }}
             src={BetterBuyGIF}
-            ref={betterBuyGIFRef}
             alt=""
           />
         </Grid>
@@ -198,26 +250,25 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.projectContainer}
+        className={classes.goldenFlightsContainer}
+        ref={goldenFlightsContainerRef}
       >
         <Grid item>
           <img
-            className={classes.gif}
+            className={classes.image}
             style={{ width: "30vw" }}
             src={GoldenFlights}
-            ref={goldenFlightsRef}
             alt=""
           />
         </Grid>
         <Grid item>
           <a
-            className={classes.GO}
-            ref={goldenFlightsGORef}
             href="https://powerful-eyrie-53621.herokuapp.com/"
             target="_blank"
             rel="noreferrer"
+            className={classes.GoldenFlightsAnchor}
           >
-            <h5>GO</h5>
+            <h5 className={classes.goldenFlightsGo}>GO</h5>
           </a>
         </Grid>
         <Grid item>
@@ -225,7 +276,6 @@ const Projects = () => {
             className={classes.gif}
             style={{ width: "30vw" }}
             src={GoldenFlightsGIF}
-            ref={goldenFlightsGIFRef}
             alt=""
           />
         </Grid>
@@ -236,26 +286,25 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.projectContainer}
+        className={classes.moviesContainer}
+        ref={moviesContainerRef}
       >
         <Grid item>
           <img
-            className={classes.gif}
+            className={classes.image}
             style={{ width: "30vw" }}
             src={Movies}
-            ref={MoviesRef}
             alt=""
           />
         </Grid>
         <Grid item>
           <a
-            className={classes.GO}
-            ref={MoviesGORef}
-            href="https://powerful-eyrie-53621.herokuapp.com/"
+            href="https://mels065.github.io/move-towards-the-movies/"
             target="_blank"
             rel="noreferrer"
+            className={classes.moviesAnchor}
           >
-            <h5>GO</h5>
+            <h5 className={classes.moviesGo}>GO</h5>
           </a>
         </Grid>
         <Grid item>
@@ -263,7 +312,6 @@ const Projects = () => {
             className={classes.gif}
             style={{ width: "30vw" }}
             src={MoveTowardsTheMoviesGIF}
-            ref={MoveTowardsTheMoviesGIFRef}
             alt=""
           />
         </Grid>
@@ -274,26 +322,25 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.projectContainer}
+        className={classes.bookSearchContainer}
+        ref={bookSearchContainerRef}
       >
         <Grid item>
           <img
-            className={classes.gif}
+            className={classes.image}
             style={{ width: "30vw" }}
             src={BookSearch}
-            ref={BookSearchRef}
             alt=""
           />
         </Grid>
         <Grid item>
           <a
-            className={classes.GO}
-            ref={BookSearchGORef}
-            href="https://powerful-eyrie-53621.herokuapp.com/"
+            href="https://hatchways-chat-app.herokuapp.com/"
             target="_blank"
             rel="noreferrer"
+            className={classes.bookSearchAnchor}
           >
-            <h5>GO</h5>
+            <h5 className={classes.bookSearchGo}>GO</h5>
           </a>
         </Grid>
         <Grid item>
@@ -301,7 +348,6 @@ const Projects = () => {
             className={classes.gif}
             style={{ width: "30vw" }}
             src={BookSearchEngineGIF}
-            ref={BookSearchEngineGIFRef}
             alt=""
           />
         </Grid>

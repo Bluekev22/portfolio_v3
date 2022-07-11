@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin)
 const useStyles = makeStyles(() => ({
   home: {
     background: "#00081a",
- zIndex: 4,
+    zIndex: 4,
     color: "white",
     position: "relative",
     "&::before": {
@@ -28,20 +28,6 @@ const useStyles = makeStyles(() => ({
       backgroundColor: "#00081a",
       transform: "skewY(5deg)",
       zIndex: 0,
-     
-      
-    },
-    "&::after": {
-      position: "absolute",
-      top: "calc(9700px + 65vh)",
-      left: "0",
-      height: "90%",
-      width: "100%",
-      content: "''",
-      background: "pink",
-      transform: "skewY(5deg)",
-      zIndex: 0,
-     
     },
   },
   main: {
@@ -81,9 +67,10 @@ const useStyles = makeStyles(() => ({
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
     color: "#01020f",
+    position: "relative",
     "&::before": {
       position: "absolute",
-      top: "10800px",
+      bottom: "100px",
       left: "0",
       height: "90%",
       width: "100%",
@@ -92,10 +79,20 @@ const useStyles = makeStyles(() => ({
       transform: "skewY(-10deg)",
       zIndex: 0,
     },
-    
+    "&::after": {
+      position: "absolute",
+      bottom: "90%",
+      left: "0",
+      height: "90%",
+      width: "100%",
+      content: "''",
+      background: "pink",
+      transform: "skewY(5deg)",
+      zIndex: 0,
+    },
   },
   skillsHeader: {
-    color: 'white',
+    color: "white",
     zIndex: 3,
   },
   about: {
@@ -107,6 +104,7 @@ const useStyles = makeStyles(() => ({
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
     color: "#01020f",
+    position: "relative",
   },
 }))
 
@@ -116,12 +114,12 @@ function App() {
   const textRef = useRef()
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
-    dynamicHeight: window.innerHeight
-  });
+    dynamicHeight: window.innerHeight,
+  })
   const setDimension = () => {
     getDimension({
       dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight
+      dynamicHeight: window.innerHeight,
     })
   }
 
@@ -135,8 +133,6 @@ function App() {
       duration: 0.85,
     })
 
-    
-
     let masterTl = gsap.timeline({ repeat: -1 })
 
     words.forEach((word) => {
@@ -147,12 +143,11 @@ function App() {
   }, [])
 
   useEffect(() => {
-    window.addEventListener('resize', setDimension);
+    window.addEventListener("resize", setDimension)
     console.log(screenSize)
-    return(() => {
-  
-        window.removeEventListener('resize', setDimension);
-    })
+    return () => {
+      window.removeEventListener("resize", setDimension)
+    }
   }, [screenSize])
 
   return (
@@ -230,7 +225,9 @@ function App() {
             direction="column"
             justifyContent="flex-start"
             alignItems="center"
-          ><h1 className={classes.skillsHeader}>SKILLS</h1></Grid>
+          >
+            <h1 className={classes.skillsHeader}>SKILLS</h1>
+          </Grid>
           <Grid
             container
             item
