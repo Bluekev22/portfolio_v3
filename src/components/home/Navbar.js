@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     marginRight: "3vw",
     position: "relative",
     transition: " 0.35s ease",
+    color: 'white',
 
     "&:active": {
       color: "white",

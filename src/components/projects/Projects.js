@@ -25,93 +25,87 @@ const useStyles = makeStyles(() => ({
     position: "relative",
   },
   projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#00081a" },
-  image: {
-    marginTop: "10vh",
-  },
-  gif: {
-    marginTop: "10vh",
-  },
   betterBuyContainer: {
     position: "absolute",
-    top: "43vh",
-    zIndex: 4,
+    top: "43vh",  
     visibility: "hidden",
-    opacity: 0,
+    marginTop: "10vh",
   },
   goldenFlightsContainer: {
     position: "absolute",
-    top: "43vh",
-    zIndex: 4,
+    top: "43vh",  
     visibility: "hidden",
-    opacity: 0,
+    marginTop: "10vh",
   },
   moviesContainer: {
     position: "absolute",
-    top: "43vh",
-    zIndex: 4,
+    top: "43vh",   
     visibility: "hidden",
-    opacity: 0,
+    marginTop: "10vh",
   },
   bookSearchContainer: {
     position: "absolute",
     top: "43vh",
-    zIndex: 4,
     visibility: "hidden",
-    opacity: 0,
+    marginTop: "10vh",
+  },
+  studentProfilesContainer: {
+    position: "absolute",
+    top: "43vh",  
+    visibility: "hidden",
+    marginTop: "10vh",
   },
   betterBuyAnchor: {
     textDecoration: "none",
-    cursor: "grab",
-    "&:hover": {
-      textDecoration: "underline",
-      textDecorationColor: "red",
-    },
+  
   },
   GoldenFlightsAnchor: { textDecoration: "none" },
   moviesAnchor: { textDecoration: "none" },
   bookSearchAnchor: { textDecoration: "none" },
+  studentProfilesAnchor: { textDecoration: "none" },
   betterBuyGo: {
     fontSize: "6vw",
-    opactiy: "0",
-
     color: "#f2f5ff",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      textDecorationColor: "#f2f5ff",
+      
     },
   },
   goldenFlightsGo: {
     fontSize: "6vw",
-    opactiy: "0",
-
-    color: "#01020f",
+    color: "rgba(243, 215, 115, 255)",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      textDecorationColor: "red",
+      
     },
   },
   moviesGo: {
     fontSize: "6vw",
-    opactiy: "0",
-
-    color: "#01020f",
+    color: "#ebfffc",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      textDecorationColor: "red",
+      
     },
   },
   bookSearchGo: {
     fontSize: "6vw",
-    opactiy: "0",
-
     color: "#01020f",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      textDecorationColor: "red",
+     
+    },
+  },
+  studentProfilesGo: {
+    fontSize: "6vw",
+    color: "#f2f5ff",
+    cursor: "pointer",
+    "&:hover": {
+      textDecoration: "underline",
+      
     },
   },
 }))
@@ -120,13 +114,11 @@ const Projects = () => {
   const classes = useStyles()
   const projectsRef = useRef()
   const betterBuyContainerRef = useRef()
-
   const projectsHeaderRef = useRef()
   const goldenFlightsContainerRef = useRef()
-
   const moviesContainerRef = useRef()
-
   const bookSearchContainerRef = useRef()
+  const studentProfilesContainerRef = useRef()
 
   useEffect(() => {
     const tl = gsap
@@ -134,7 +126,7 @@ const Projects = () => {
         scrollTrigger: {
           trigger: projectsRef.current,
           start: "bottom 100%",
-          end: "+=9000px",
+          end: "+=11250px",
           markers: "true",
           scrub: "true",
           pin: true,
@@ -154,25 +146,25 @@ const Projects = () => {
       .to(betterBuyContainerRef.current, { autoAlpha: 1 }, "-=0.5")
 
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "pink" })
+      .to(projectsRef.current, { background: "black" })
       .to(betterBuyContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
           text: { value: "Golden Flights", type: "diff" },
-          color: "gold",
+          color: " rgba(176, 123, 16, 255)",
         },
         "-=0.5"
       )
       .to(goldenFlightsContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "orange" })
+      .to(projectsRef.current, { background: " hsl(171, 100%, 41%)" })
       .to(goldenFlightsContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
           text: { value: "Move Towards The Movies", type: "diff" },
-          color: "green",
+          color: "#4a4a4a",
         },
         "-=0.5"
       )
@@ -189,6 +181,18 @@ const Projects = () => {
       )
       .to(moviesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
 
+      .to({}, { duration: 2 })
+      .to(projectsRef.current, { background: "black" })
+      .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
+      .to(
+        projectsHeaderRef.current,
+        {
+          text: { value: "Student Profiles", type: "diff" },
+          color: " rgba(176, 123, 16, 255)",
+        },
+        "-=0.5"
+      )
+      .to(studentProfilesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
   }, [])
 
@@ -348,6 +352,42 @@ const Projects = () => {
             className={classes.gif}
             style={{ width: "30vw" }}
             src={BookSearchEngineGIF}
+            alt=""
+          />
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        item
+        direction="row"
+        justifyContent="space-around"
+        alignItems="center"
+        className={classes.studentProfilesContainer}
+        ref={studentProfilesContainerRef}
+      >
+        <Grid item>
+          <img
+            className={classes.image}
+            style={{ width: "30vw" }}
+           // src={BetterBuy}
+            alt=""
+          />
+        </Grid>
+        <Grid item>
+          <a
+            href="https://better-buy-shop.herokuapp.com/"
+            target="_blank"
+            rel="noreferrer"
+            className={classes.studentProfilesAnchor}
+          >
+            <h5 className={classes.studentProfilesGo}>GO</h5>
+          </a>
+        </Grid>
+        <Grid item>
+          <img
+            className={classes.gif}
+            style={{ width: "30vw" }}
+          //  src={BetterBuyGIF}
             alt=""
           />
         </Grid>
