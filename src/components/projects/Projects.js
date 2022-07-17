@@ -90,7 +90,7 @@ const useStyles = makeStyles(() => ({
   },
   hatchwaysGo: {
     fontSize: "6vw",
-    color: "#01020f",
+    color: "#00204d",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
@@ -98,7 +98,7 @@ const useStyles = makeStyles(() => ({
   },
   studentProfilesGo: {
     fontSize: "6vw",
-    color: "#f2f5ff",
+    color: "#90278E",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
@@ -164,24 +164,25 @@ const Projects = () => {
       )
       .to(moviesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
+      .to(projectsRef.current, { background: "#e6f0ff" })
       .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
           text: { value: "Hatchways Chat App", type: "diff" },
-          color: "yellow",
+          color: "#3A8DFF",
         },
         "-=0.5"
       )
       .to(hatchwaysContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "black" })
+      .to(projectsRef.current, { background: "A6A7AA" })
       .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
         {
           text: { value: "Student Profiles", type: "diff" },
-          color: " rgba(176, 123, 16, 255)",
+          color: "#8B5E3B",
         },
         "-=0.5"
       )
