@@ -11,8 +11,10 @@ import GoldenFlightsGIF from "../../assets/GIFs/GoldenFlightsGIF.gif"
 import GoldenFlights from "../../assets/img/GoldenFlights.png"
 import MoveTowardsTheMoviesGIF from "../../assets/GIFs/MoveTowardsTheMoviesGIF.gif"
 import Movies from "../../assets/img/Movies.png"
-import BookSearchEngineGIF from "../../assets/GIFs/BookSearchEngineGIF.gif"
-import BookSearch from "../../assets/img/BookSearch.png"
+import HatchwaysChatAppGIF from "../../assets/GIFs/HatchwaysChatAppGIF.gif"
+import HatchwaysChatApp from "../../assets/img/HatchwaysChatApp.png"
+import StudentProfilesGIF from "../../assets/GIFs/StudentProfilesGIF.gif"
+import StudentProfiles from "../../assets/img/StudentProfiles.png"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
@@ -27,23 +29,23 @@ const useStyles = makeStyles(() => ({
   projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#00081a" },
   betterBuyContainer: {
     position: "absolute",
-    top: "43vh",  
+    top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
   },
   goldenFlightsContainer: {
     position: "absolute",
-    top: "43vh",  
+    top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
   },
   moviesContainer: {
     position: "absolute",
-    top: "43vh",   
+    top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
   },
-  bookSearchContainer: {
+  hatchwaysContainer: {
     position: "absolute",
     top: "43vh",
     visibility: "hidden",
@@ -51,17 +53,16 @@ const useStyles = makeStyles(() => ({
   },
   studentProfilesContainer: {
     position: "absolute",
-    top: "43vh",  
+    top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
   },
   betterBuyAnchor: {
     textDecoration: "none",
-  
   },
   GoldenFlightsAnchor: { textDecoration: "none" },
   moviesAnchor: { textDecoration: "none" },
-  bookSearchAnchor: { textDecoration: "none" },
+  hatchwaysAnchor: { textDecoration: "none" },
   studentProfilesAnchor: { textDecoration: "none" },
   betterBuyGo: {
     fontSize: "6vw",
@@ -69,7 +70,6 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      
     },
   },
   goldenFlightsGo: {
@@ -78,7 +78,6 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      
     },
   },
   moviesGo: {
@@ -87,16 +86,14 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      
     },
   },
-  bookSearchGo: {
+  hatchwaysGo: {
     fontSize: "6vw",
     color: "#01020f",
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-     
     },
   },
   studentProfilesGo: {
@@ -105,7 +102,6 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
     "&:hover": {
       textDecoration: "underline",
-      
     },
   },
 }))
@@ -117,7 +113,7 @@ const Projects = () => {
   const projectsHeaderRef = useRef()
   const goldenFlightsContainerRef = useRef()
   const moviesContainerRef = useRef()
-  const bookSearchContainerRef = useRef()
+  const hatchwaysContainerRef = useRef()
   const studentProfilesContainerRef = useRef()
 
   useEffect(() => {
@@ -142,9 +138,7 @@ const Projects = () => {
         },
         "-=0.5"
       )
-
       .to(betterBuyContainerRef.current, { autoAlpha: 1 }, "-=0.5")
-
       .to({}, { duration: 2 })
       .to(projectsRef.current, { background: "black" })
       .to(betterBuyContainerRef.current, { autoAlpha: 0 }, "-=0.5")
@@ -174,13 +168,12 @@ const Projects = () => {
       .to(
         projectsHeaderRef.current,
         {
-          text: { value: "Book Search Engine", type: "diff" },
+          text: { value: "Hatchways Chat App", type: "diff" },
           color: "yellow",
         },
         "-=0.5"
       )
-      .to(moviesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
-
+      .to(hatchwaysContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
       .to(projectsRef.current, { background: "black" })
       .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
@@ -326,14 +319,14 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.bookSearchContainer}
-        ref={bookSearchContainerRef}
+        className={classes.hatchwaysContainer}
+        ref={hatchwaysContainerRef}
       >
         <Grid item>
           <img
             className={classes.image}
             style={{ width: "30vw" }}
-            src={BookSearch}
+            src={HatchwaysChatApp}
             alt=""
           />
         </Grid>
@@ -342,16 +335,16 @@ const Projects = () => {
             href="https://hatchways-chat-app.herokuapp.com/"
             target="_blank"
             rel="noreferrer"
-            className={classes.bookSearchAnchor}
+            className={classes.hatchwaysAnchor}
           >
-            <h5 className={classes.bookSearchGo}>GO</h5>
+            <h5 className={classes.hatchwaysGo}>GO</h5>
           </a>
         </Grid>
         <Grid item>
           <img
             className={classes.gif}
             style={{ width: "30vw" }}
-            src={BookSearchEngineGIF}
+            src={HatchwaysChatAppGIF}
             alt=""
           />
         </Grid>
@@ -369,7 +362,7 @@ const Projects = () => {
           <img
             className={classes.image}
             style={{ width: "30vw" }}
-           // src={BetterBuy}
+            src={StudentProfiles}
             alt=""
           />
         </Grid>
@@ -387,7 +380,7 @@ const Projects = () => {
           <img
             className={classes.gif}
             style={{ width: "30vw" }}
-          //  src={BetterBuyGIF}
+            src={StudentProfilesGIF}
             alt=""
           />
         </Grid>
