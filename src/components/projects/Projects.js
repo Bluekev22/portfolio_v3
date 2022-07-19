@@ -15,6 +15,9 @@ import HatchwaysChatAppGIF from "../../assets/GIFs/HatchwaysChatAppGIF.gif"
 import HatchwaysChatApp from "../../assets/img/HatchwaysChatApp.png"
 import StudentProfilesGIF from "../../assets/GIFs/StudentProfilesGIF.gif"
 import StudentProfiles from "../../assets/img/StudentProfiles.png"
+import Go from "../projects/Go"
+import Screenshot from "./Screenshot"
+import Gif from "./Gif"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
@@ -27,82 +30,11 @@ const useStyles = makeStyles(() => ({
     position: "relative",
   },
   projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#00081a" },
-  betterBuyContainer: {
+  projectContainer: {
     position: "absolute",
     top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
-  },
-  goldenFlightsContainer: {
-    position: "absolute",
-    top: "43vh",
-    visibility: "hidden",
-    marginTop: "10vh",
-  },
-  moviesContainer: {
-    position: "absolute",
-    top: "43vh",
-    visibility: "hidden",
-    marginTop: "10vh",
-  },
-  hatchwaysContainer: {
-    position: "absolute",
-    top: "43vh",
-    visibility: "hidden",
-    marginTop: "10vh",
-  },
-  studentProfilesContainer: {
-    position: "absolute",
-    top: "43vh",
-    visibility: "hidden",
-    marginTop: "10vh",
-  },
-  betterBuyAnchor: {
-    textDecoration: "none",
-  },
-  GoldenFlightsAnchor: { textDecoration: "none" },
-  moviesAnchor: { textDecoration: "none" },
-  hatchwaysAnchor: { textDecoration: "none" },
-  studentProfilesAnchor: { textDecoration: "none" },
-  betterBuyGo: {
-    fontSize: "6vw",
-    color: "#f2f5ff",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-    },
-  },
-  goldenFlightsGo: {
-    fontSize: "6vw",
-    color: "rgba(243, 215, 115, 255)",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-    },
-  },
-  moviesGo: {
-    fontSize: "6vw",
-    color: "#ebfffc",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-    },
-  },
-  hatchwaysGo: {
-    fontSize: "6vw",
-    color: "#00204d",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-    },
-  },
-  studentProfilesGo: {
-    fontSize: "6vw",
-    color: "#90278E",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-    },
   },
 }))
 
@@ -205,42 +137,18 @@ const Projects = () => {
           Projects
         </h1>
       </Grid>
-
       <Grid
         container
         item
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.betterBuyContainer}
+        className={classes.projectContainer}
         ref={betterBuyContainerRef}
       >
-        <Grid item>
-          <img
-            className={classes.image}
-            style={{ width: "30vw" }}
-            src={BetterBuy}
-            alt=""
-          />
-        </Grid>
-        <Grid item>
-          <a
-            href="https://better-buy-shop.herokuapp.com/"
-            target="_blank"
-            rel="noreferrer"
-            className={classes.betterBuyAnchor}
-          >
-            <h5 className={classes.betterBuyGo}>GO</h5>
-          </a>
-        </Grid>
-        <Grid item>
-          <img
-            className={classes.gif}
-            style={{ width: "30vw" }}
-            src={BetterBuyGIF}
-            alt=""
-          />
-        </Grid>
+        <Screenshot screenshot={BetterBuy} />
+        <Go goColor="#f2f5ff" href="https://better-buy-shop.herokuapp.com/" />
+        <Gif gif={BetterBuyGIF} />
       </Grid>
       <Grid
         container
@@ -248,35 +156,15 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.goldenFlightsContainer}
+        className={classes.projectContainer}
         ref={goldenFlightsContainerRef}
       >
-        <Grid item>
-          <img
-            className={classes.image}
-            style={{ width: "30vw" }}
-            src={GoldenFlights}
-            alt=""
-          />
-        </Grid>
-        <Grid item>
-          <a
-            href="https://powerful-eyrie-53621.herokuapp.com/"
-            target="_blank"
-            rel="noreferrer"
-            className={classes.GoldenFlightsAnchor}
-          >
-            <h5 className={classes.goldenFlightsGo}>GO</h5>
-          </a>
-        </Grid>
-        <Grid item>
-          <img
-            className={classes.gif}
-            style={{ width: "30vw" }}
-            src={GoldenFlightsGIF}
-            alt=""
-          />
-        </Grid>
+        <Screenshot screenshot={GoldenFlights} />
+        <Go
+          goColor="rgba(243, 215, 115, 255)"
+          href="https://powerful-eyrie-53621.herokuapp.com/"
+        />
+        <Gif gif={GoldenFlightsGIF} />
       </Grid>
       <Grid
         container
@@ -284,35 +172,15 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.moviesContainer}
+        className={classes.projectContainer}
         ref={moviesContainerRef}
       >
-        <Grid item>
-          <img
-            className={classes.image}
-            style={{ width: "30vw" }}
-            src={Movies}
-            alt=""
-          />
-        </Grid>
-        <Grid item>
-          <a
-            href="https://mels065.github.io/move-towards-the-movies/"
-            target="_blank"
-            rel="noreferrer"
-            className={classes.moviesAnchor}
-          >
-            <h5 className={classes.moviesGo}>GO</h5>
-          </a>
-        </Grid>
-        <Grid item>
-          <img
-            className={classes.gif}
-            style={{ width: "30vw" }}
-            src={MoveTowardsTheMoviesGIF}
-            alt=""
-          />
-        </Grid>
+        <Screenshot screenshot={Movies} />
+        <Go
+          goColor="#ebfffc"
+          href="https://mels065.github.io/move-towards-the-movies/"
+        />
+        <Gif gif={MoveTowardsTheMoviesGIF} />
       </Grid>
       <Grid
         container
@@ -320,35 +188,15 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.hatchwaysContainer}
+        className={classes.projectContainer}
         ref={hatchwaysContainerRef}
       >
-        <Grid item>
-          <img
-            className={classes.image}
-            style={{ width: "30vw" }}
-            src={HatchwaysChatApp}
-            alt=""
-          />
-        </Grid>
-        <Grid item>
-          <a
-            href="https://hatchways-chat-app.herokuapp.com/"
-            target="_blank"
-            rel="noreferrer"
-            className={classes.hatchwaysAnchor}
-          >
-            <h5 className={classes.hatchwaysGo}>GO</h5>
-          </a>
-        </Grid>
-        <Grid item>
-          <img
-            className={classes.gif}
-            style={{ width: "30vw" }}
-            src={HatchwaysChatAppGIF}
-            alt=""
-          />
-        </Grid>
+        <Screenshot screenshot={HatchwaysChatApp} />
+        <Go
+          goColor="#00204d"
+          href="https://hatchways-chat-app.herokuapp.com/"
+        />
+        <Gif gif={HatchwaysChatAppGIF} />
       </Grid>
       <Grid
         container
@@ -356,35 +204,15 @@ const Projects = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        className={classes.studentProfilesContainer}
+        className={classes.projectContainer}
         ref={studentProfilesContainerRef}
       >
-        <Grid item>
-          <img
-            className={classes.image}
-            style={{ width: "30vw" }}
-            src={StudentProfiles}
-            alt=""
-          />
-        </Grid>
-        <Grid item>
-          <a
-            href="https://better-buy-shop.herokuapp.com/"
-            target="_blank"
-            rel="noreferrer"
-            className={classes.studentProfilesAnchor}
-          >
-            <h5 className={classes.studentProfilesGo}>GO</h5>
-          </a>
-        </Grid>
-        <Grid item>
-          <img
-            className={classes.gif}
-            style={{ width: "30vw" }}
-            src={StudentProfilesGIF}
-            alt=""
-          />
-        </Grid>
+        <Screenshot screenshot={StudentProfiles} />
+        <Go
+          goColor="#90278E"
+          href="https://hatchways-student-profile.herokuapp.com/"
+        />
+        <Gif gif={StudentProfilesGIF} />
       </Grid>
     </Grid>
   )
