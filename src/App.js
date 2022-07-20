@@ -98,6 +98,11 @@ const useStyles = makeStyles(() => ({
   skillsHeader: {
     fontSize: "6vw",
   },
+  skillPill: {
+    borderRadius: "40px",
+    padding: "20px",
+    width: "calc(200px + 3vw)",
+  },
   skill: {
     backgroundColor: "white",
     borderRadius: "40px",
@@ -122,16 +127,6 @@ function App() {
   const classes = useStyles()
   const cursorRef = useRef()
   const textRef = useRef()
-  const [screenSize, getDimension] = useState({
-    dynamicWidth: window.innerWidth,
-    dynamicHeight: window.innerHeight,
-  })
-  const setDimension = () => {
-    getDimension({
-      dynamicWidth: window.innerWidth,
-      dynamicHeight: window.innerHeight,
-    })
-  }
 
   const words = ["Developer.", "Designer.", "Creator."]
 
@@ -151,14 +146,6 @@ function App() {
       masterTl.add(tl)
     })
   }, [])
-
-  useEffect(() => {
-    window.addEventListener("resize", setDimension)
-    console.log(screenSize)
-    return () => {
-      window.removeEventListener("resize", setDimension)
-    }
-  }, [screenSize])
 
   return (
     <BrowserRouter>
@@ -253,13 +240,13 @@ function App() {
                 alignItems="center"
                 spacing={10}
               >
-                <Grid item>
+                <Grid item className={classes.skillPill}>
                   <h1 className={classes.skill}>JavaScript</h1>
                 </Grid>
-                <Grid item>
+                <Grid item className={classes.skillPill}>
                   <h1 className={classes.skill}>CSS</h1>
                 </Grid>
-                <Grid item>
+                <Grid item className={classes.skillPill}>
                   <h1 className={classes.skill}>HTML</h1>
                 </Grid>
               </Grid>

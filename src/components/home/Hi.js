@@ -40,7 +40,7 @@ const Hi = () => {
         skewX: "25",
         duration: 2,
         ease: "power2.out",
-        delay: 1,
+        delay: 1.8,
         textShadow:
           "0px 0px #ff7842, 0px 0px #ff7842,0px 0px #ff7842,0px 0px #f79022,0px 0px #e79022,0px 0px #e5a800,0px 0px #e5a800,0px 0px #cabf00,0px 0px #cabf00,0px 0px #cabf00,0px 0px #a4d500,0px 0px #a4d500,0px 0px #81de44,0px 0px #81de44,0px 0px #81de44,0px 0px #58e56d,0px 0px #58e56d,0px 0px #00ea93,0px 0px #00ea93,0px 0px #00ea93,0px 0px #00e1c0,0px 0px #00e1c0,0px 0px #00d4e1,0px 0px #00d4e1,0px 0px #00d4e1,0px 0px #00c4f2,0px 0px #00c4f2,0px 0px #00b2f0,0px 0px #00b2f0,0px 0px #00b2f0",
       }
@@ -75,7 +75,7 @@ const Hi = () => {
         filter: "blur(5px)",
         zIndex: "1",
         duration: 2,
-        delay: 1,
+        delay: 1.8,
       }
     )
   }, [])
