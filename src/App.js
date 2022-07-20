@@ -55,7 +55,6 @@ const useStyles = makeStyles(() => ({
   text: {
     fontSize: "4vw",
   },
-  thing: {},
   cursor: {
     width: "2.75vw",
     height: "5vw",
@@ -86,14 +85,25 @@ const useStyles = makeStyles(() => ({
       height: "90%",
       width: "100%",
       content: "''",
-      background: "pink",
+      background: "#e0e1e6",
       transform: "skewY(5deg)",
       zIndex: 0,
     },
   },
+
+  //
+  //here
+  //
+  skillsContainer: { marginTop: "20vh", color: "black", zIndex: 3 },
   skillsHeader: {
-    color: "white",
-    zIndex: 3,
+    fontSize: "6vw",
+  },
+  skill: {
+    backgroundColor: "white",
+    borderRadius: "40px",
+    padding: "10px",
+    textAlign: "center",
+    fontSize: "1.667vw",
   },
   about: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
@@ -226,7 +236,34 @@ function App() {
             justifyContent="flex-start"
             alignItems="center"
           >
-            <h1 className={classes.skillsHeader}>SKILLS</h1>
+            <Grid
+              container
+              item
+              className={classes.skillsContainer}
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="center"
+            >
+              <h1 className={classes.skillsHeader}>Skills</h1>
+              <Grid
+                container
+                item
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={10}
+              >
+                <Grid item>
+                  <h1 className={classes.skill}>JavaScript</h1>
+                </Grid>
+                <Grid item>
+                  <h1 className={classes.skill}>CSS</h1>
+                </Grid>
+                <Grid item>
+                  <h1 className={classes.skill}>HTML</h1>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid
             container

@@ -108,7 +108,7 @@ const Projects = () => {
       )
       .to(hatchwaysContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "A6A7AA" })
+      .to(projectsRef.current, { background: "#e0e1e6" })
       .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
         projectsHeaderRef.current,
