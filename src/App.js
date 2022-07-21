@@ -1,11 +1,22 @@
 import "./App.css"
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect } from "react"
 import { BrowserRouter } from "react-router-dom"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TextPlugin } from "gsap/TextPlugin"
+import { IoLogoJavascript, IoLogoCss3 } from "react-icons/io5"
+import { DiHtml5, DiReact, DiNodejsSmall } from "react-icons/di"
+import {
+  SiMaterialui,
+  SiMysql,
+  SiMongodb,
+  SiRedux,
+  SiGraphql,
+  SiGreensock,
+} from "react-icons/si"
+import { FaNode } from "react-icons/fa"
 import Navbar from "./components/home/Navbar"
 import Hi from "./components/home/Hi"
 import Projects from "./components/projects/Projects"
@@ -65,7 +76,7 @@ const useStyles = makeStyles(() => ({
   skills: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
-    color: "#01020f",
+
     position: "relative",
     "&::before": {
       position: "absolute",
@@ -94,14 +105,21 @@ const useStyles = makeStyles(() => ({
   //
   //here
   //
-  skillsContainer: { marginTop: "20vh", color: "black", zIndex: 3 },
+  skillsContainer: { marginTop: "40vh", color: "black", zIndex: 3 },
   skillsHeader: {
     fontSize: "6vw",
+    color: "#01020f",
+    marginBottom: "5vh",
   },
-  skillPill: {
+
+  skillContainer: {
     borderRadius: "40px",
-    padding: "20px",
     width: "calc(200px + 3vw)",
+    background: "black",
+    margin: "2.5vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   skill: {
     backgroundColor: "white",
@@ -109,7 +127,12 @@ const useStyles = makeStyles(() => ({
     padding: "10px",
     textAlign: "center",
     fontSize: "1.667vw",
+    background:
+      "linear-gradient(90deg, #ff7842, #f79022, #e5a800, #cabf00, #a4d500, #81de44)",
+    WebkitTextFillColor: "transparent",
+    WebkitBackgroundClip: "text",
   },
+  skillIcon: { color: "#58e56d", fontSize: "1.667vw" },
   about: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
@@ -238,16 +261,102 @@ function App() {
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-                spacing={10}
               >
-                <Grid item className={classes.skillPill}>
-                  <h1 className={classes.skill}>JavaScript</h1>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>JavaScript</h1>
+                    <IoLogoJavascript className={classes.skillIcon} />
+                  </div>
                 </Grid>
-                <Grid item className={classes.skillPill}>
-                  <h1 className={classes.skill}>CSS</h1>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>CSS</h1>
+                    <IoLogoCss3 className={classes.skillIcon} />
+                  </div>
                 </Grid>
-                <Grid item className={classes.skillPill}>
-                  <h1 className={classes.skill}>HTML</h1>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>HTML</h1>
+                    <DiHtml5 className={classes.skillIcon} />
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                item
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>React</h1>
+                    <DiReact className={classes.skillIcon} />
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>Redux</h1>
+                    <SiRedux className={classes.skillIcon} />
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>Node.js</h1>
+                    <FaNode className={classes.skillIcon} />
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                item
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>Express.js</h1>
+                    <DiNodejsSmall className={classes.skillIcon} />
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>MySQL</h1>
+                    <SiMysql className={classes.skillIcon} />
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>GraphQL</h1>
+                    <SiGraphql className={classes.skillIcon} />
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                item
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>MongoDB</h1>
+                    <SiMongodb className={classes.skillIcon} />
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>MaterialUI</h1>
+                    <SiMaterialui className={classes.skillIcon} />
+                  </div>
+                </Grid>
+                <Grid item>
+                  <div className={classes.skillContainer}>
+                    <h1 className={classes.skill}>Greensock</h1>
+                    <SiGreensock className={classes.skillIcon} />
+                  </div>
                 </Grid>
               </Grid>
             </Grid>
