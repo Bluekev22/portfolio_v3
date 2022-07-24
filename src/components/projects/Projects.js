@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
     zIndex: 3,
     position: "relative",
   },
-  projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#00081a" },
+  projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#01020f" },
   projectContainer: {
     position: "absolute",
     top: "43vh",

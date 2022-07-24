@@ -74,8 +74,8 @@ const useStyles = makeStyles(() => ({
   },
 
   skills: {
-    background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
-    minHeight: "1080px",
+    background: "#01020f",
+    minHeight: "1280px",
 
     position: "relative",
     "&::before": {
@@ -85,7 +85,7 @@ const useStyles = makeStyles(() => ({
       height: "90%",
       width: "100%",
       content: "''",
-      background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
+      background: "#01020f",
       transform: "skewY(-10deg)",
       zIndex: 0,
     },
@@ -105,34 +105,44 @@ const useStyles = makeStyles(() => ({
   //
   //here
   //
-  skillsContainer: { marginTop: "40vh", color: "black", zIndex: 3 },
+  skillsContainer: { marginTop: "40vh", zIndex: 3 },
   skillsHeader: {
     fontSize: "6vw",
-    color: "#01020f",
+    color: "white",
     marginBottom: "5vh",
   },
 
   skillContainer: {
     borderRadius: "40px",
-    width: "calc(200px + 3vw)",
-    background: "black",
+    width: "calc(175px + 3vw)",
+    background: "white",
     margin: "2.5vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    "&:hover": {
+      background:
+        "linear-gradient(90deg, #ff7842, #f79022, #e5a800, #cabf00, #a4d500, #81de44)",
+      WebkitTextFillColor: "transparent",
+      WebkitBackgroundClip: "text",
+      textShadow:
+        "-1px 1px #ff7842, -2px 2px #f79022,-3px 3px #e5a800,-4px 4px #cabf00, -5px 5px #a4d500,-6px 6px #81de44,-7px 7px #58e56d,-8px 8px #00ea93,-9px 9px #00e1c0,-10px 10px #00d4e1,-11px 11px #00c4f2,-12px 12px #00b2f0",
+    },
   },
   skill: {
-    backgroundColor: "white",
     borderRadius: "40px",
     padding: "10px",
     textAlign: "center",
     fontSize: "1.667vw",
-    background:
-      "linear-gradient(90deg, #ff7842, #f79022, #e5a800, #cabf00, #a4d500, #81de44)",
+    background: "linear-gradient(90deg, black, black)",
     WebkitTextFillColor: "transparent",
     WebkitBackgroundClip: "text",
+    "&:hover": {
+      WebkitTextFillColor: "transparent",
+      WebkitBackgroundClip: "text",
+    },
   },
-  skillIcon: { color: "#58e56d", fontSize: "1.667vw" },
+  skillIcon: { color: "#00d4e1", fontSize: "1.667vw" },
   about: {
     background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
     minHeight: "1080px",
