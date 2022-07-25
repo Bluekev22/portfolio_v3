@@ -55,7 +55,6 @@ const Projects = () => {
           trigger: projectsRef.current,
           start: "bottom 100%",
           end: "+=11250px",
-          markers: "true",
           scrub: "true",
           pin: true,
           pinSpacing: true,
