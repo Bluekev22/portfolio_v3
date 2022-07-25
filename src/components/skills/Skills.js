@@ -19,7 +19,6 @@ const useStyles = makeStyles(() => ({
     skills: {
       background: "#01020f",
       minHeight: "1280px",
-  
       position: "relative",
       "&::before": {
         position: "absolute",
@@ -45,14 +44,14 @@ const useStyles = makeStyles(() => ({
       },
     },
     skillsContainer: { marginTop: "40vh", zIndex: 3 },
-    skillsHeader: {
+    header: {
       fontSize: "6vw",
       color: "white",
       marginBottom: "5vh",
     },
     skillContainer: {
       borderRadius: "40px",
-      width: "calc(175px + 3vw)",
+      width: "calc(50px + 10vw)",
       background: "white",
       margin: "2.5vh",
       display: "flex",
@@ -71,7 +70,7 @@ const useStyles = makeStyles(() => ({
       borderRadius: "40px",
       padding: "10px",
       textAlign: "center",
-      fontSize: "1.667vw",
+      fontSize: "1.75vw",
       background: "linear-gradient(90deg, black, black)",
       WebkitTextFillColor: "transparent",
       WebkitBackgroundClip: "text",
@@ -188,7 +187,7 @@ const Skills = () => {
               justifyContent="flex-start"
               alignItems="center"
             >
-              <h1 className={classes.skillsHeader}>Skills</h1>
+              <h1 className={classes.header}>Skills</h1>
               <Grid
                 container
                 item

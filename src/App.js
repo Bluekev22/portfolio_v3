@@ -10,6 +10,7 @@ import Navbar from "./components/home/Navbar"
 import Hi from "./components/home/Hi"
 import Projects from "./components/projects/Projects"
 import Skills from './components/skills/Skills'
+import About from './components/about/About'
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
@@ -62,16 +63,21 @@ const useStyles = makeStyles(() => ({
     marginLeft: ".5vw",
     backgroundColor: "rgba(0,157,249,.65)",
   },
-  about: {
-    background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
-    minHeight: "1080px",
-    color: "#01020f",
-  },
   contact: {
-    background: "linear-gradient(90deg, #0048f0 0,#00b2f0 100%)",
-    minHeight: "1080px",
-    color: "#01020f",
+    background: "#01020f",
+    minHeight: "700px",
+    color: "white",
     position: "relative",
+    "&::before": {
+      position: "absolute",
+      bottom: "600px",
+      left: "0",
+      height: "100%",
+      width: "100%",
+      content: "''",
+      backgroundImage: "linear-gradient(90deg, #0048f0 0%, #00b2f0 100%)",
+      zIndex: 0,
+    },
   },
 }))
 
@@ -168,14 +174,7 @@ function App() {
           </Grid>
           <Projects />
           <Skills />
-          <Grid
-            container
-            item
-            className={classes.about}
-            direction="column"
-            justifyContent="flex-start"
-            alignItems="center"
-          ></Grid>
+          <About />
           <Grid
             container
             item
