@@ -1,6 +1,6 @@
-import { HashLink as Link } from "react-router-hash-link";
-import { Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { HashLink as Link } from "react-router-hash-link"
+import { Grid } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(() => ({
   linkContainer: { marginTop: "3vh" },
@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
     marginRight: "3vw",
     position: "relative",
     transition: " 0.35s ease",
-    color: 'white',
+    color: "white",
 
     "&:active": {
       color: "white",
@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
       width: "100%",
       height: "2px",
       bottom: "-8px",
-      backgroundColor: "#009df9",
+      backgroundColor: "#0091ff",
       webkitTransform: "scaleX(0)",
       transform: "scaleX(0)",
       webkitTransformOrigin: "top left",
@@ -36,17 +36,17 @@ const useStyles = makeStyles(() => ({
       transition: "transform 0.35s ease, -webkit-transform 0.35s ease",
     },
     "&:hover": {
-      color: "#009df9",
+      color: "#0091ff",
       "&::before": {
         transform: "scale(1)",
         webkitTransform: "scale(1)",
       },
     },
   },
-}));
+}))
 
 const Navbar = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <Grid
       container
@@ -77,7 +77,7 @@ const Navbar = () => {
         </Link>
       </Grid>
     </Grid>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

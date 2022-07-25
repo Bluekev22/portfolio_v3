@@ -9,8 +9,8 @@ import { TextPlugin } from "gsap/TextPlugin"
 import Navbar from "./components/home/Navbar"
 import Hi from "./components/home/Hi"
 import Projects from "./components/projects/Projects"
-import Skills from './components/skills/Skills'
-import About from './components/about/About'
+import Skills from "./components/skills/Skills"
+import About from "./components/about/About"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
@@ -44,7 +44,7 @@ const useStyles = makeStyles(() => ({
     marginLeft: "10vw",
   },
   titlesContainer: {
-    backgroundImage: "linear-gradient(90deg, #0048f0 0%, #00b2f0 100%)",
+    backgroundImage: "linear-gradient(90deg, #0048f0 0%, #0091ff 100%)",
     WebkitBackgroundClip: "text",
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
@@ -68,16 +68,6 @@ const useStyles = makeStyles(() => ({
     minHeight: "700px",
     color: "white",
     position: "relative",
-    "&::before": {
-      position: "absolute",
-      bottom: "600px",
-      left: "0",
-      height: "100%",
-      width: "100%",
-      content: "''",
-      backgroundImage: "linear-gradient(90deg, #0048f0 20%, #00b2f0 100%)",
-      zIndex: 0,
-    },
   },
 }))
 
