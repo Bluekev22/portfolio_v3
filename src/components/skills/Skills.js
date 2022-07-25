@@ -93,7 +93,7 @@ const Skills = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: skillRef1.current,
-          start: "top 80%",
+          start: "top 85%",
           end: 'top 10%',
           markers: "true",
           onToggle:(self)=>{
@@ -113,7 +113,7 @@ const Skills = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: skillRef2.current,
-          start: "top 80%",
+          start: "top 85%",
           end: 'top 10%',
           markers: "true",
           onToggle:(self)=>{
@@ -133,7 +133,7 @@ const Skills = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: skillRef3.current,
-          start: "top 80%",
+          start: "top 85%",
           end: 'top 10%',
           markers: "true",
           onToggle:(self)=>{
@@ -153,7 +153,7 @@ const Skills = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: skillRef4.current,
-          start: "top 80%",
+          start: "top 85%",
           end: 'top 10%',
           markers: "true",
           onToggle:(self)=>{

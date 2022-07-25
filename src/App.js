@@ -75,7 +75,7 @@ const useStyles = makeStyles(() => ({
       height: "100%",
       width: "100%",
       content: "''",
-      backgroundImage: "linear-gradient(90deg, #0048f0 0%, #00b2f0 100%)",
+      backgroundImage: "linear-gradient(90deg, #0048f0 20%, #00b2f0 100%)",
       zIndex: 0,
     },
   },
