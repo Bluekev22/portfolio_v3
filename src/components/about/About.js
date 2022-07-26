@@ -7,7 +7,7 @@ import { gsap } from "gsap"
 const useStyles = makeStyles(() => ({
   about: {
     background:
-      "linear-gradient(90deg, #0071c7 0%, #0091c2 22%, #009ec2 50%, #00aeb8 75%, #00ad93 100%)",
+    "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
     minHeight: "1080px",
     color: "white",
     position: "relative",
@@ -40,7 +40,7 @@ const useStyles = makeStyles(() => ({
     height: "90%",
     width: "100%",
     backgroundImage:
-      "linear-gradient(90deg, #0071c7 0%, #0091c2 22%, #009ec2 50%, #00aeb8 75%, #00ad93 100%)",
+    "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
     transform: "skewY(-10deg)",
     zIndex: 2,
   },
@@ -52,12 +52,39 @@ const useStyles = makeStyles(() => ({
     width: "100%",
     zIndex: 1,
     backgroundImage:
-      "linear-gradient(90deg, #0071c7 0%, #0091c2 22%, #009ec2 50%, #00aeb8 75%, #00ad93 100%)",
+    "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
   },
 }))
 
 const About = () => {
   const classes = useStyles()
+  let backGroundRef = useRef([])
+
+  useEffect(() => {
+    
+  let tl = gsap.timeline({ repeat: -1 })
+
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #b38300 0%, #b76106 10%, #b38300 20%, #999100 30%, #719400 40%, #438a15 50%, #118d23 60%, #009961 70%, #008f79 80%, #008d94 90%, #00758f 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #999100 0%, #b38300 10%, #b76106 20%, #b38300 30%, #999100 40%, #719400 50%, #438a15 60%, #118d23 70%, #009961 80%, #008f79 90%, #008d94 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #719400 0%, #999100 10%, #b38300 20%, #b76106 30%, #b38300 40%, #999100 50%, #719400 60%, #438a15 70%, #118d23 80%, #009961 90%, #008f79 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #438a15 0%, #719400 10%, #999100 20%, #b38306 30%, #b76106 40%, #b38300 50%, #999100 60%, #719400 70%, #438a15 80%, #118d23 90%, #009961 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #118d23 0%, #438a15 10%, #719400 20%, #999100 30%, #b38306 40%, #b76106 50%, #b38300 60%, #999100 70%, #719400 80%, #438a15 90%, #118d23 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #009961 0%, #118d23 10%, #438a15 20%, #719400 30%, #999100 40%, #b38306 50%, #b76106 60%, #b38300 70%, #999100 80%, #719400 90%, #438a15 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #008f79 0%, #009961 10%, #118d23 20%, #438a15 30%, #719400 40%, #999100 50%, #b38306 60%, #b76106 70%, #b38300 80%, #999100 90%, #719400 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #008d94 0%, #008f79 10%, #009961 20%, #118d23 30%, #438a15 40%, #719400 50%, #999100 60%, #b38306 70%, #b76106 80%, #b38300 90%, #999100 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #00758f 0%, #008d94 10%, #008f79 20%, #009961 30%, #118d23 40%, #438a15 50%, #719400 60%, #999100 70%, #b38306 80%, #b76106 90%, #b38300 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #008d94 0%, #00758f 10%, #008d94 20%, #008f79 30%, #009961 40%, #118d23 50%, #438a15 60%, #719400 70%, #999100 80%, #b38306 90%, #b76106 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #008f79 0%, #008d94 10%, #00758f 20%, #008d94 30%, #008f79 40%, #009961 50%, #118d23 60%, #438a15 70%, #719400 80%, #999100 90%, #b38306 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #009961 0%, #008f79 10%, #008d94 20%, #00758f 30%, #008d94 40%, #008f79 50%, #009961 60%, #118d23 70%, #438a15 80%, #719400 90%, #999100 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #118d23 0%, #009961 10%, #008f79 20%, #008d94 30%, #00758f 40%, #008d94 50%, #008f79 60%, #009961 70%, #118d23 80%, #438a15 90%, #719400 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #438a15 0%, #118d23 10%, #009961 20%, #008f79 30%, #008d94 40%, #00758f 50%, #008d94 60%, #008f79 70%, #009961 80%, #118d23 90%, #438a15 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #719400 0%, #438a15 10%, #118d23 20%, #009961 30%, #008f79 40%, #008d94 50%, #00758f 60%, #008d94 70%, #008f79 80%, #009961 90%, #118d23 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #999100 0%, #719400 10%, #438a15 20%, #118d23 30%, #009961 40%, #008f79 50%, #008d94 60%, #00758f 70%, #008d94 80%, #008f79 90%, #009961 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #b38300 0%, #999100 10%, #719400 20%, #438a15 30%, #118d23 40%, #009961 50%, #008f79 60%, #008d94 70%, #00758f 80%, #008d94 90%, #008f79 100%)"})
+  tl.to(backGroundRef.current, {backgroundImage: "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #008d94 100%)"})
+
+}, [])
+
   return (
     <Grid
       container
@@ -66,6 +93,9 @@ const About = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
+      ref={(element) => {
+        backGroundRef.current[0] = element
+      }}
     >
       <Grid
         container
@@ -97,8 +127,12 @@ const About = () => {
         </Grid>
       </Grid>
       <span className={classes.topLeftSpan}></span>
-      <span className={classes.topRightSpan}></span>
-      <span className={classes.bottomRightSpan}></span>
+      <span className={classes.topRightSpan} ref={(element) => {
+        backGroundRef.current[1] = element
+      }}></span>
+      <span className={classes.bottomRightSpan} ref={(element) => {
+        backGroundRef.current[2] = element
+      }}></span>
     </Grid>
   )
 }
