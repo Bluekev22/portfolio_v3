@@ -24,9 +24,10 @@ const useStyles = makeStyles(() => ({
     paddingLeft: "10vw",
   },
   descriptionHeadshotContainer: { marginTop: "5vh" },
-  description: { padding: "5vh 10vw 5vh 10vw" },
+  description: { padding: "5vh 5vw 5vh 5vw" },
+  headshotContainer: { paddingLeft: "4vw" },
   headshot: {
-    width: "300px",
+    width: "325px",
     border: "2px solid #008d94",
     borderRadius: "2px",
   },
@@ -203,7 +204,7 @@ const About = () => {
           alignItems="center"
           className={classes.descriptionHeadshotContainer}
         >
-          <Grid item className={classes.description} xl={9} lg={9}>
+          <Grid item className={classes.description} xl={8} lg={8}>
             <p>
               Hi! I'm <strong>Kevin Shank</strong>. I'm a Web Developer
               currently based in Dearborn, MI. I recently completed a boot camp
@@ -219,7 +220,7 @@ const About = () => {
               on the beach.
             </p>
           </Grid>
-          <Grid item xl={3} lg={3}>
+          <Grid item xl={3} lg={3} className={classes.headshotContainer}>
             <img className={classes.headshot} src={Headshot} alt="" />
           </Grid>
         </Grid>
