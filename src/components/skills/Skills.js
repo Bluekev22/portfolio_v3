@@ -18,7 +18,7 @@ import { FaNode } from "react-icons/fa"
 const useStyles = makeStyles(() => ({
   skills: {
     background: "#00081a",
-    minHeight: "1280px",
+    minHeight: "1320px",
     position: "relative",
     "&::before": {
       position: "absolute",
@@ -43,7 +43,7 @@ const useStyles = makeStyles(() => ({
       zIndex: 0,
     },
   },
-  skillsContainer: { marginTop: "40vh", zIndex: 3 },
+  skillsContainer: { marginTop: "45vh", zIndex: 3 },
   header: {
     fontSize: "6vw",
     color: "white",

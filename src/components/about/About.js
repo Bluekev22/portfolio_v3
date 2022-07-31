@@ -3,12 +3,13 @@ import { useRef, useEffect } from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
+import Headshot from "../../assets/img/Headshot.png"
 
 const useStyles = makeStyles(() => ({
   about: {
     background:
       "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
-    minHeight: "1080px",
+    minHeight: "1280px",
     color: "white",
     position: "relative",
   },
@@ -20,8 +21,15 @@ const useStyles = makeStyles(() => ({
   header: {
     fontSize: "6vw",
     color: "white",
+    paddingLeft: "10vw",
   },
-  description: { margin: "15vh 10vw 10vh 10vw" },
+  descriptionHeadshotContainer: { marginTop: "5vh" },
+  description: { padding: "5vh 10vw 5vh 10vw" },
+  headshot: {
+    width: "300px",
+    border: "2px solid #008d94",
+    borderRadius: "2px",
+  },
   topLeftSpan: {
     position: "absolute",
     bottom: "90%",
@@ -180,29 +188,40 @@ const About = () => {
         container
         item
         className={classes.aboutContainer}
-        direction="column"
+        direction="row"
         justifyContent="flex-start"
         alignItems="center"
       >
         <Grid item>
-          {" "}
           <h1 className={classes.header}>About</h1>
         </Grid>
-        <Grid item className={classes.description}>
-          <p>
-            Hi! I'm <strong>Kevin Shank</strong>. I'm a Web Developer currently
-            based in Dearborn, MI. I recently completed a boot camp course
-            through Michigan State University.
-            <br />
-            <br />
-            I certainly enjoy the design aspect of front-end UX/UI development
-            and the imagination it cultivates within me. At the end of the day,
-            I'm just a creative guy who loves to solve problems, no matter what
-            they may be.
-            <br />
-            <br />I enjoy biking, playing the piano, grilling, and long walks on
-            the beach.
-          </p>
+        <Grid
+          item
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          className={classes.descriptionHeadshotContainer}
+        >
+          <Grid item className={classes.description} xl={9} lg={9}>
+            <p>
+              Hi! I'm <strong>Kevin Shank</strong>. I'm a Web Developer
+              currently based in Dearborn, MI. I recently completed a boot camp
+              course through Michigan State University.
+              <br />
+              <br />
+              I certainly enjoy the design aspect of front-end UX/UI development
+              and the imagination it cultivates within me. At the end of the
+              day, I'm just a creative guy who loves to solve problems, no
+              matter what they may be.
+              <br />
+              <br />I enjoy biking, playing the piano, grilling, and long walks
+              on the beach.
+            </p>
+          </Grid>
+          <Grid item xl={3} lg={3}>
+            <img className={classes.headshot} src={Headshot} alt="" />
+          </Grid>
         </Grid>
       </Grid>
       <span className={classes.topLeftSpan}></span>
