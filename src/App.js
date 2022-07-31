@@ -11,6 +11,7 @@ import Hi from "./components/home/Hi"
 import Projects from "./components/projects/Projects"
 import Skills from "./components/skills/Skills"
 import About from "./components/about/About"
+import Contact from "./components/contact/Contact"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
@@ -62,12 +63,6 @@ const useStyles = makeStyles(() => ({
     height: "5vw",
     marginLeft: ".5vw",
     backgroundColor: "rgba(0,157,249,.65)",
-  },
-  contact: {
-    background: "#01020f",
-    minHeight: "700px",
-    color: "white",
-    position: "relative",
   },
 }))
 
@@ -165,14 +160,7 @@ function App() {
           <Projects />
           <Skills />
           <About />
-          <Grid
-            container
-            item
-            className={classes.contact}
-            direction="column"
-            justifyContent="flex-start"
-            alignItems="center"
-          ></Grid>
+          <Contact />
         </Grid>
       </div>
     </BrowserRouter>

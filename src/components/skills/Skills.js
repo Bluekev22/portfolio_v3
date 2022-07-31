@@ -47,7 +47,7 @@ const useStyles = makeStyles(() => ({
   header: {
     fontSize: "6vw",
     color: "white",
-    marginBottom: "5vh",
+    marginBottom: "8vh",
   },
   skillContainer: {
     borderRadius: "40px",
