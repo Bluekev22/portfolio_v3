@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TextPlugin } from "gsap/TextPlugin"
+import LocomotiveScroll from "locomotive-scroll"
 import Navbar from "./components/home/Navbar"
 import Hi from "./components/home/Hi"
 import Projects from "./components/projects/Projects"
@@ -72,6 +73,8 @@ function App() {
   const textRef = useRef()
 
   const words = ["Developer.", "Designer.", "Creator."]
+
+  const scroll = new LocomotiveScroll()
 
   useEffect(() => {
     gsap.to(cursorRef.current, {

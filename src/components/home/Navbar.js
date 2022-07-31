@@ -57,22 +57,22 @@ const Navbar = () => {
       alignItems="center"
     >
       <Grid item>
-        <Link className={classes.link} to="#projects">
+        <Link className={classes.link} to="#projects" smooth>
           PROJECTS
         </Link>
       </Grid>
       <Grid item>
-        <Link className={classes.link} to="#skills">
+        <Link className={classes.link} to="#skills" smooth>
           SKILLS
         </Link>
       </Grid>
       <Grid item>
-        <Link className={classes.link} to="#about">
+        <Link className={classes.link} to="#about" smooth>
           ABOUT
         </Link>
       </Grid>
       <Grid item>
-        <Link className={classes.link} to="#footer">
+        <Link className={classes.link} to="#contact" smooth>
           CONTACT
         </Link>
       </Grid>

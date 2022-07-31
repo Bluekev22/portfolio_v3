@@ -78,6 +78,7 @@ const Contact = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
+      id="contact"
     >
       <Grid
         container

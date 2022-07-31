@@ -233,6 +233,7 @@ const Skills = () => {
         direction="column"
         justifyContent="flex-start"
         alignItems="center"
+        id="skills"
       >
         <h1 className={classes.header}>Skills</h1>
         <Grid

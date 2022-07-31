@@ -194,7 +194,9 @@ const About = () => {
         alignItems="center"
       >
         <Grid item>
-          <h1 className={classes.header}>About</h1>
+          <h1 className={classes.header} id="about">
+            About
+          </h1>
         </Grid>
         <Grid
           item

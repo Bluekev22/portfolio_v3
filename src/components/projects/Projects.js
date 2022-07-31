@@ -130,6 +130,7 @@ const Projects = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
+      id="projects"
     >
       <Grid item>
         <h1 className={classes.projectsHeader} ref={projectsHeaderRef}>
