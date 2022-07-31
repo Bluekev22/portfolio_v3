@@ -3,6 +3,7 @@ import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 import { IoLogoJavascript, IoLogoCss3 } from "react-icons/io5"
 import { DiHtml5, DiReact, DiNodejsSmall } from "react-icons/di"
 import {
@@ -83,6 +84,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Skills = () => {
+  
   const classes = useStyles()
   let skillRef1 = useRef([])
   let skillRef2 = useRef([])
@@ -96,7 +98,6 @@ const Skills = () => {
           trigger: skillRef1.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -128,7 +129,6 @@ const Skills = () => {
           trigger: skillRef2.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -160,7 +160,6 @@ const Skills = () => {
           trigger: skillRef3.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -192,7 +191,6 @@ const Skills = () => {
           trigger: skillRef4.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -225,6 +223,7 @@ const Skills = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
+      data-scroll-section
     >
       <Grid
         container

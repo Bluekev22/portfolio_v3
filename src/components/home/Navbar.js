@@ -1,11 +1,11 @@
-import { HashLink as Link } from "react-router-hash-link"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const useStyles = makeStyles(() => ({
   linkContainer: { marginTop: "3vh" },
   link: {
-    textDecoration: "none",
+    listStyle: "none",
     fontSize: "28px",
     marginRight: "3vw",
     position: "relative",
@@ -31,12 +31,11 @@ const useStyles = makeStyles(() => ({
       webkitTransformOrigin: "top left",
       transformOrigin: "top left",
       webkitTransition: "-webkit-transform 0.35s ease",
-      transition: "-webkit-transform 0.35s ease",
       transition: "transform 0.35s ease",
-      transition: "transform 0.35s ease, -webkit-transform 0.35s ease",
     },
     "&:hover": {
       color: "#0091ff",
+      cursor: 'pointer',
       "&::before": {
         transform: "scale(1)",
         webkitTransform: "scale(1)",
@@ -47,6 +46,18 @@ const useStyles = makeStyles(() => ({
 
 const Navbar = () => {
   const classes = useStyles()
+
+  const { scroll } = useLocomotiveScroll();
+
+  const handleScroll = (id) => {
+
+    scroll.scrollTo(id, {
+      offset: "-100",
+      duration: "2000",
+      easing: [0.25, 0.0, 0.35, 1.0],
+    });
+  };
+
   return (
     <Grid
       container
@@ -57,24 +68,24 @@ const Navbar = () => {
       alignItems="center"
     >
       <Grid item>
-        <Link className={classes.link} to="#projects" smooth>
+        <li className={classes.link} onClick={() => handleScroll('#projects')}>
           PROJECTS
-        </Link>
+        </li>
       </Grid>
       <Grid item>
-        <Link className={classes.link} to="#skills" smooth>
+        <li className={classes.link} onClick={() => handleScroll('#skills')}>
           SKILLS
-        </Link>
+        </li>
       </Grid>
       <Grid item>
-        <Link className={classes.link} to="#about" smooth>
+        <li className={classes.link} onClick={() => handleScroll('#about')}>
           ABOUT
-        </Link>
+        </li>
       </Grid>
       <Grid item>
-        <Link className={classes.link} to="#contact" smooth>
+        <li className={classes.link} onClick={() => handleScroll('#contact')}>
           CONTACT
-        </Link>
+        </li>
       </Grid>
     </Grid>
   )

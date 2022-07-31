@@ -39,6 +39,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Projects = () => {
+
   const classes = useStyles()
   const projectsRef = useRef()
   const betterBuyContainerRef = useRef()
@@ -130,7 +131,8 @@ const Projects = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
-      id="projects"
+      data-scroll-section
+      
     >
       <Grid item>
         <h1 className={classes.projectsHeader} ref={projectsHeaderRef}>
@@ -145,6 +147,7 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={betterBuyContainerRef}
+        id="projects"
       >
         <Screenshot screenshot={BetterBuy} />
         <Go goColor="#f2f5ff" href="https://better-buy-shop.herokuapp.com/" />
