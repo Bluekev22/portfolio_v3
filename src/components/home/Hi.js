@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
+import  ScrollTrigger  from "gsap/ScrollTrigger"
 
 const useStyles = makeStyles(() => ({
   hiContainer: { position: "relative", marginTop: "10vh" },
@@ -21,7 +22,6 @@ const useStyles = makeStyles(() => ({
 
 const Hi = () => {
   const classes = useStyles()
-
   const hiRef = useRef()
   const shadowRef = useRef()
 
@@ -84,13 +84,6 @@ const Hi = () => {
   useEffect(() => {
     const tl = gsap
       .timeline({
-        scrollTrigger: {
-          trigger: hiRef.current,
-          start: "top 30%",
-          end: "bottom 20%",
-
-          scrub: 1,
-        },
       })
       //hi
       .to(hiRef.current, {
@@ -112,6 +105,14 @@ const Hi = () => {
         },
         0
       )
+      ScrollTrigger.create({ 
+          trigger: hiRef.current,
+          start: "top 30%",
+          end: "bottom 20%",
+          scroller: ".App",
+          scrub: 1,
+          animation: tl,
+        })
   }, [])
 
   return (

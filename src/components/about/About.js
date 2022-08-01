@@ -66,6 +66,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const About = () => {
+
   const classes = useStyles()
   let backGroundRef = useRef([])
 
@@ -184,6 +185,7 @@ const About = () => {
       ref={(element) => {
         backGroundRef.current[0] = element
       }}
+      data-scroll-section
     >
       <Grid
         container

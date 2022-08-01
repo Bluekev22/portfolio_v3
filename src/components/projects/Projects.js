@@ -39,6 +39,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Projects = () => {
+
   const classes = useStyles()
   const projectsRef = useRef()
   const betterBuyContainerRef = useRef()
@@ -55,6 +56,7 @@ const Projects = () => {
           trigger: projectsRef.current,
           start: "bottom 100%",
           end: "+=11250px",
+          scroller: ".App",
           scrub: "true",
           pin: true,
           pinSpacing: true,
@@ -130,7 +132,6 @@ const Projects = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
-      id="projects"
     >
       <Grid item>
         <h1 className={classes.projectsHeader} ref={projectsHeaderRef}>
@@ -145,6 +146,8 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={betterBuyContainerRef}
+        id="projects"
+        
       >
         <Screenshot screenshot={BetterBuy} />
         <Go goColor="#f2f5ff" href="https://better-buy-shop.herokuapp.com/" />
@@ -158,6 +161,7 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={goldenFlightsContainerRef}
+        
       >
         <Screenshot screenshot={GoldenFlights} />
         <Go
@@ -174,6 +178,7 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={moviesContainerRef}
+      
       >
         <Screenshot screenshot={Movies} />
         <Go
@@ -190,6 +195,7 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={hatchwaysContainerRef}
+       
       >
         <Screenshot screenshot={HatchwaysChatApp} />
         <Go
@@ -206,6 +212,7 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={studentProfilesContainerRef}
+      
       >
         <Screenshot screenshot={StudentProfiles} />
         <Go
