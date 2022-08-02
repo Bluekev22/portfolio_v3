@@ -50,17 +50,9 @@ const Projects = () => {
   const studentProfilesContainerRef = useRef()
 
   useEffect(() => {
-    const tl = gsap
+    setTimeout(() => {
+      const tl = gsap
       .timeline({
-        scrollTrigger: {
-          trigger: projectsRef.current,
-          start: "bottom 100%",
-          end: "+=11250px",
-          scroller: ".App",
-          scrub: "true",
-          pin: true,
-          pinSpacing: true,
-        },
       })
       .to(projectsRef.current, { background: "#9bb0d2" })
       .to(
@@ -121,6 +113,21 @@ const Projects = () => {
       )
       .to(studentProfilesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
+      ScrollTrigger.create({
+          trigger: projectsRef.current,
+          start: "bottom 100%",
+          end: "+=11250px",
+          scroller: ".App",
+          scrub: "true",
+          pin: true,
+          pinSpacing: true,
+          animation: tl,
+      })
+        ScrollTrigger.refresh()
+
+       
+    }, 0)
+   
   }, [])
 
   return (

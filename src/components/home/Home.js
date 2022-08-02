@@ -90,7 +90,6 @@ const Home = () => {
             direction="column"
             justifyContent="flex-start"
             alignItems="center"
-            data-scroll-section
           >
             <Navbar />
             <Grid

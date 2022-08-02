@@ -42,13 +42,12 @@ function App() {
           direction="column"
           justifyContent="center"
           alignItems="center"
-          data-scroll-section
         >
-          <Home />
-          <Projects />
-          <Skills />
-          <About />
-          <Contact />
+          <Home data-scroll-section/>
+          <Projects data-scroll-section/>
+          <Skills data-scroll-section/>
+          <About data-scroll-section/>
+          <Contact data-scroll-section/>
         </Grid>
       </div>
       </LocomotiveScrollProvider>
