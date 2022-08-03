@@ -1,8 +1,6 @@
 import React from "react"
-import { useRef, useEffect } from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import { gsap } from "gsap"
 
 import { FaLinkedinIn, FaCodepen, FaGithub } from "react-icons/fa"
 
@@ -81,7 +79,6 @@ const Contact = () => {
       justifyContent="center"
       alignItems="center"
       id="contact"
-      data-scroll-section
     >
       <Grid
         container

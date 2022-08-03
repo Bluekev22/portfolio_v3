@@ -15,3 +15,6 @@
   font-family: 'proximanova-regular';
 }
 
+.App {
+  overflow-y: hidden !important;
+}

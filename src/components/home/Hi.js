@@ -21,6 +21,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Hi = () => {
+  gsap.registerPlugin(ScrollTrigger)
   const classes = useStyles()
   const hiRef = useRef()
   const shadowRef = useRef()
@@ -82,7 +83,8 @@ const Hi = () => {
 
   //animation on scroll
   useEffect(() => {
-    const tl = gsap
+    setTimeout(() => {
+      const tl = gsap
       .timeline({
       })
       //hi
@@ -110,9 +112,18 @@ const Hi = () => {
           start: "top 30%",
           end: "bottom 20%",
           scroller: ".App",
-          scrub: 1,
           animation: tl,
+          scrub: 1,
         })
+        ScrollTrigger.refresh()
+
+        return () => {
+          // Let's clear instances
+          tl.kill();
+          ScrollTrigger.kill();
+        };
+    }, 0)
+    
   }, [])
 
   return (
