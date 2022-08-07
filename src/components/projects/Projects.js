@@ -39,7 +39,6 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Projects = () => {
-
   const classes = useStyles()
   const projectsRef = useRef()
   const betterBuyContainerRef = useRef()
@@ -50,13 +49,14 @@ const Projects = () => {
   const studentProfilesContainerRef = useRef()
 
   useEffect(() => {
-    setTimeout(() => {
+    let pro = projectsRef.current
+    let header = projectsHeaderRef.current
       const tl = gsap
       .timeline({
       })
-      .to(projectsRef.current, { background: "#9bb0d2" })
+      .to(pro, { background: "#9bb0d2" })
       .to(
-        projectsHeaderRef.current,
+        header,
         {
           text: { value: "Better Buy", type: "diff" },
           color: "#0b3278",
@@ -65,10 +65,10 @@ const Projects = () => {
       )
       .to(betterBuyContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "black" })
+      .to(pro, { background: "black" })
       .to(betterBuyContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
-        projectsHeaderRef.current,
+        header,
         {
           text: { value: "Golden Flights", type: "diff" },
           color: " rgba(176, 123, 16, 255)",
@@ -77,10 +77,10 @@ const Projects = () => {
       )
       .to(goldenFlightsContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: " hsl(171, 100%, 41%)" })
+      .to(pro, { background: " hsl(171, 100%, 41%)" })
       .to(goldenFlightsContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
-        projectsHeaderRef.current,
+        header,
         {
           text: { value: "Move Towards The Movies", type: "diff" },
           color: "#4a4a4a",
@@ -89,10 +89,10 @@ const Projects = () => {
       )
       .to(moviesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "#e6f0ff" })
+      .to(pro, { background: "#e6f0ff" })
       .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
-        projectsHeaderRef.current,
+        header,
         {
           text: { value: "Hatchways Chat App", type: "diff" },
           color: "#3A8DFF",
@@ -101,10 +101,10 @@ const Projects = () => {
       )
       .to(hatchwaysContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      .to(projectsRef.current, { background: "#e0e1e6" })
+      .to(pro, { background: "#e0e1e6" })
       .to(moviesContainerRef.current, { autoAlpha: 0 }, "-=0.5")
       .to(
-        projectsHeaderRef.current,
+        header,
         {
           text: { value: "Student Profiles", type: "diff" },
           color: "#8B5E3B",
@@ -114,19 +114,15 @@ const Projects = () => {
       .to(studentProfilesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
       ScrollTrigger.create({
-          trigger: projectsRef.current,
+          trigger: pro,
           start: "bottom 100%",
           end: "+=11250px",
-          scroller: ".App",
           scrub: "true",
           pin: true,
           pinSpacing: true,
           animation: tl,
       })
-        ScrollTrigger.refresh()
-
-       
-    }, 0)
+       /*  ScrollTrigger.refresh() */
    
   }, [])
 

@@ -1,6 +1,5 @@
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const useStyles = makeStyles(() => ({
   linkContainer: { marginTop: "3vh" },
@@ -47,17 +46,6 @@ const useStyles = makeStyles(() => ({
 const Navbar = () => {
   const classes = useStyles()
 
-  const { scroll } = useLocomotiveScroll();
-
-  const handleScroll = (id) => {
-
-    scroll.scrollTo(id, {
-      offset: "-100",
-      duration: "2000",
-      easing: [0.25, 0.0, 0.35, 1.0],
-    });
-  };
-
   return (
     <Grid
       container
@@ -68,22 +56,22 @@ const Navbar = () => {
       alignItems="center"
     >
       <Grid item>
-        <li className={classes.link} onClick={() => handleScroll('#projects')}>
+        <li className={classes.link}>
           PROJECTS
         </li>
       </Grid>
       <Grid item>
-        <li className={classes.link} onClick={() => handleScroll('#skills')}>
+        <li className={classes.link}>
           SKILLS
         </li>
       </Grid>
       <Grid item>
-        <li className={classes.link} onClick={() => handleScroll('#about')}>
+        <li className={classes.link}>
           ABOUT
         </li>
       </Grid>
       <Grid item>
-        <li className={classes.link} onClick={() => handleScroll('#contact')}>
+        <li className={classes.link}>
           CONTACT
         </li>
       </Grid>
