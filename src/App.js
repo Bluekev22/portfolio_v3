@@ -3,6 +3,8 @@ import { Grid } from "@material-ui/core"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { TextPlugin } from "gsap/TextPlugin"
+import { MuiThemeProvider } from '@material-ui/core';
+import { theme } from './themes/theme';
 import Home from './components/home/Home'
 import Projects from "./components/projects/Projects"
 import Skills from "./components/skills/Skills"
@@ -14,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin)
 function App() {
 
   return (
+    <MuiThemeProvider theme={theme}>
       <div className="App">
         <Grid
           container
@@ -28,6 +31,7 @@ function App() {
           <Contact />
         </Grid>
       </div>
+      </MuiThemeProvider>
   )
 }
 
