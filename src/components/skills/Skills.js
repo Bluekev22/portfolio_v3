@@ -3,7 +3,6 @@ import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 import { IoLogoJavascript, IoLogoCss3 } from "react-icons/io5"
 import { DiHtml5, DiReact, DiNodejsSmall } from "react-icons/di"
 import {
@@ -92,167 +91,127 @@ const Skills = () => {
   let skillRef4 = useRef([])
 
   useEffect(() => {
-    setTimeout(() => {
-      const tl = gsap
+    let tl = gsap
       .timeline({
+        scrollTrigger: {
+          trigger: skillRef1.current,
+          start: "top 85%",
+          end: "top 10%",
+          onToggle: (self) => {
+            if (self.isActive) {
+              gsap.fromTo(
+                skillRef1.current,
+                { x: -600, autoAlpha: 0 },
+                { x: 0, autoAlpha: 1, stagger: 0.1 }
+              )
+            } else {
+              gsap.to(skillRef1.current, {
+                x: -600,
+                autoAlpha: 0,
+                stagger: 0.1,
+              })
+            }
+          },
+        },
       })
       .fromTo(
         skillRef1.current,
         { x: -600, autoAlpha: 0 },
         { x: 0, autoAlpha: 1, stagger: 0.1 }
       )
-      ScrollTrigger.create({ 
-        trigger: skillRef1.current,
-        start: "top 85%",
-        end: "top 10%",
-        scroller: '.App',
-        onToggle: (self) => {
-          if (self.isActive) {
-            gsap.fromTo(
-              skillRef1.current,
-              { x: -600, autoAlpha: 0 },
-              { x: 0, autoAlpha: 1, stagger: 0.1 }
-            )
-          } else {
-            gsap.to(skillRef1.current, {
-              x: -600,
-              autoAlpha: 0,
-              stagger: 0.1,
-            })
-          }
-        },
-        })
-        ScrollTrigger.refresh()
-
-        return () => {
-          // Let's clear instances
-          tl.kill();
-          ScrollTrigger.kill();
-        };
-    }, 0)
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      const tl = gsap
+    let tl = gsap
       .timeline({
+        scrollTrigger: {
+          trigger: skillRef2.current,
+          start: "top 85%",
+          end: "top 10%",
+          onToggle: (self) => {
+            if (self.isActive) {
+              gsap.fromTo(
+                skillRef2.current,
+                { x: -600, autoAlpha: 0 },
+                { x: 0, autoAlpha: 1, stagger: 0.1 }
+              )
+            } else {
+              gsap.to(skillRef2.current, {
+                x: -600,
+                autoAlpha: 0,
+                stagger: 0.1,
+              })
+            }
+          },
+        },
       })
       .fromTo(
         skillRef2.current,
         { x: -600, autoAlpha: 0 },
         { x: 0, autoAlpha: 1, stagger: 0.1 }
       )
-      ScrollTrigger.create({ 
-        trigger: skillRef2.current,
-        start: "top 85%",
-        end: "top 10%",
-        scroller: '.App',
-        onToggle: (self) => {
-          if (self.isActive) {
-            gsap.fromTo(
-              skillRef2.current,
-              { x: -600, autoAlpha: 0 },
-              { x: 0, autoAlpha: 1, stagger: 0.1 }
-            )
-          } else {
-            gsap.to(skillRef2.current, {
-              x: -600,
-              autoAlpha: 0,
-              stagger: 0.1,
-            })
-          }
-        },
-        })
-        ScrollTrigger.refresh()
-
-        return () => {
-          // Let's clear instances
-          tl.kill();
-          ScrollTrigger.kill();
-        };
-    }, 0)
   }, [])
 
-useEffect(() => {
-    setTimeout(() => {
-      const tl = gsap
+  useEffect(() => {
+    let tl = gsap
       .timeline({
+        scrollTrigger: {
+          trigger: skillRef3.current,
+          start: "top 85%",
+          end: "top 10%",
+          onToggle: (self) => {
+            if (self.isActive) {
+              gsap.fromTo(
+                skillRef3.current,
+                { x: -600, autoAlpha: 0 },
+                { x: 0, autoAlpha: 1, stagger: 0.1 }
+              )
+            } else {
+              gsap.to(skillRef3.current, {
+                x: -600,
+                autoAlpha: 0,
+                stagger: 0.1,
+              })
+            }
+          },
+        },
       })
       .fromTo(
         skillRef3.current,
         { x: -600, autoAlpha: 0 },
         { x: 0, autoAlpha: 1, stagger: 0.1 }
       )
-      ScrollTrigger.create({ 
-        trigger: skillRef3.current,
-        start: "top 85%",
-        end: "top 10%",
-        scroller: '.App',
-        onToggle: (self) => {
-          if (self.isActive) {
-            gsap.fromTo(
-              skillRef3.current,
-              { x: -600, autoAlpha: 0 },
-              { x: 0, autoAlpha: 1, stagger: 0.1 }
-            )
-          } else {
-            gsap.to(skillRef3.current, {
-              x: -600,
-              autoAlpha: 0,
-              stagger: 0.1,
-            })
-          }
-        },
-        })
-        ScrollTrigger.refresh()
-
-        return () => {
-          // Let's clear instances
-          tl.kill();
-          ScrollTrigger.kill();
-        };
-    }, 0)
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      const tl = gsap
+    let tl = gsap
       .timeline({
+        scrollTrigger: {
+          trigger: skillRef4.current,
+          start: "top 85%",
+          end: "top 10%",
+          onToggle: (self) => {
+            if (self.isActive) {
+              gsap.fromTo(
+                skillRef4.current,
+                { x: -600, autoAlpha: 0 },
+                { x: 0, autoAlpha: 1, stagger: 0.1 }
+              )
+            } else {
+              gsap.to(skillRef4.current, {
+                x: -600,
+                autoAlpha: 0,
+                stagger: 0.1,
+              })
+            }
+          },
+        },
       })
       .fromTo(
         skillRef4.current,
         { x: -600, autoAlpha: 0 },
         { x: 0, autoAlpha: 1, stagger: 0.1 }
       )
-      ScrollTrigger.create({ 
-        trigger: skillRef4.current,
-        start: "top 85%",
-        end: "top 10%",
-        scroller: '.App',
-        onToggle: (self) => {
-          if (self.isActive) {
-            gsap.fromTo(
-              skillRef4.current,
-              { x: -600, autoAlpha: 0 },
-              { x: 0, autoAlpha: 1, stagger: 0.1 }
-            )
-          } else {
-            gsap.to(skillRef4.current, {
-              x: -600,
-              autoAlpha: 0,
-              stagger: 0.1,
-            })
-          }
-        },
-        })
-        ScrollTrigger.refresh()
-
-        return () => {
-          // Let's clear instances
-          tl.kill();
-          ScrollTrigger.kill();
-        };
-    }, 0)
   }, [])
 
   return (

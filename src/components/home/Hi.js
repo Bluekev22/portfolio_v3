@@ -76,6 +76,7 @@ const Hi = () => {
         filter: "blur(5px)",
         zIndex: "1",
         duration: 2,
+        ease: "power2.out",
         delay: 1.8,
       }
     )
@@ -83,9 +84,14 @@ const Hi = () => {
 
   //animation on scroll
   useEffect(() => {
-    setTimeout(() => {
-      const tl = gsap
+    const tl = gsap
       .timeline({
+        scrollTrigger: {
+          trigger: hiRef.current,
+          start: "top 30%",
+          end: "bottom 20%",
+          scrub: 1,
+        },
       })
       //hi
       .to(hiRef.current, {
@@ -107,23 +113,6 @@ const Hi = () => {
         },
         0
       )
-      ScrollTrigger.create({ 
-          trigger: hiRef.current,
-          start: "top 30%",
-          end: "bottom 20%",
-          scroller: ".App",
-          animation: tl,
-          scrub: 1,
-        })
-        ScrollTrigger.refresh()
-
-        return () => {
-          // Let's clear instances
-          tl.kill();
-          ScrollTrigger.kill();
-        };
-    }, 0)
-    
   }, [])
 
   return (
