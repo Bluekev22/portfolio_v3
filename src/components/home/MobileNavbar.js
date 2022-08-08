@@ -1,25 +1,33 @@
-import React from 'react'
+import React from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import { FaAddressCard, FaProjectDiagram, FaBrain, FaEnvelope } from "react-icons/fa"
+import {
+  FaAddressCard,
+  FaProjectDiagram,
+  FaBrain,
+  FaEnvelope,
+} from "react-icons/fa"
 import { BiArrowToTop } from "react-icons/bi"
 
 const useStyles = makeStyles((theme) => ({
-
-    linkContainer: {
+  linkContainer: {
     position: "fixed",
-    bottom: 0, 
-    padding: '10px 10px 5px 10px', 
-    backgroundColor: 'white'},
+    bottom: 0,
+    padding: "10px 10px 5px 10px",
+    backgroundColor: "white",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
 
-    link: {
+  link: {
     listStyle: "none",
     fontSize: "14px",
     width: "100%",
     transition: " 0.35s ease",
     color: "#00081a",
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
+    [theme.breakpoints.up("md")]: {
+      display: "none",
     },
 
     "&:active": {
@@ -45,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:hover": {
       color: "#0091ff",
-      cursor: 'pointer',
+      cursor: "pointer",
       "&::before": {
         transform: "scale(1)",
         webkitTransform: "scale(1)",
@@ -55,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const MobileNavbar = () => {
-    const classes = useStyles()
+  const classes = useStyles()
   return (
     <Grid
       container
@@ -67,27 +75,27 @@ const MobileNavbar = () => {
     >
       <Grid item>
         <li className={classes.link}>
-        <BiArrowToTop/>
+          <BiArrowToTop />
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-        <FaProjectDiagram/>
+          <FaProjectDiagram />
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-        <FaBrain/>
+          <FaBrain />
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-        <FaAddressCard/>
+          <FaAddressCard />
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-        <FaEnvelope />
+          <FaEnvelope />
         </li>
       </Grid>
     </Grid>
