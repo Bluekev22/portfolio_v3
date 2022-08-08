@@ -76,6 +76,7 @@ const Hi = () => {
         filter: "blur(5px)",
         zIndex: "1",
         duration: 2,
+        ease: "power2.out",
         delay: 1.8,
       }
     )
@@ -89,7 +90,6 @@ const Hi = () => {
           trigger: hiRef.current,
           start: "top 30%",
           end: "bottom 20%",
-
           scrub: 1,
         },
       })

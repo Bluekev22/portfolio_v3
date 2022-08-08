@@ -120,6 +120,7 @@ const Projects = () => {
           scrub: "true",
           pin: true,
           pinSpacing: true,
+          invalidateOnRefresh: true,
           animation: tl,
       })
        /*  ScrollTrigger.refresh() */

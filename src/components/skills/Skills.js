@@ -97,7 +97,6 @@ const Skills = () => {
           trigger: skillRef1.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -129,7 +128,6 @@ const Skills = () => {
           trigger: skillRef2.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -161,7 +159,6 @@ const Skills = () => {
           trigger: skillRef3.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(
@@ -193,7 +190,6 @@ const Skills = () => {
           trigger: skillRef4.current,
           start: "top 85%",
           end: "top 10%",
-          markers: "true",
           onToggle: (self) => {
             if (self.isActive) {
               gsap.fromTo(

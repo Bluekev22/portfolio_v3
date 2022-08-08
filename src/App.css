@@ -14,3 +14,7 @@
   padding: 0;
   font-family: 'proximanova-regular';
 }
+
+.App {
+  overflow-x: hidden;
+}

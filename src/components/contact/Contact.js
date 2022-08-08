@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 import { FaLinkedinIn, FaCodepen, FaGithub } from "react-icons/fa"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   contact: {
     background: "#00081a",
     minHeight: "600px",

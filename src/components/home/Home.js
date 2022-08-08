@@ -4,6 +4,7 @@ import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
 import Navbar from "./Navbar"
+import MobileNavbar from './MobileNavbar'
 import Hi from "./Hi"
 
 const useStyles = makeStyles(() => ({
@@ -92,6 +93,7 @@ const Home = () => {
             alignItems="center"
           >
             <Navbar />
+            <MobileNavbar />
             <Grid
               container
               item

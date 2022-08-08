@@ -1,24 +1,32 @@
+import React from 'react'
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import { FaAddressCard, FaProjectDiagram, FaBrain, FaEnvelope } from "react-icons/fa"
+import { BiArrowToTop } from "react-icons/bi"
 
 const useStyles = makeStyles((theme) => ({
-  linkContainer: { marginTop: "3vh" },
-  link: {
+
+    linkContainer: {
+    position: "fixed",
+    bottom: 0, 
+    padding: '10px 10px 5px 10px', 
+    backgroundColor: 'white'},
+
+    link: {
     listStyle: "none",
-    fontSize: "28px",
-    marginRight: "60px",
-    position: "relative",
+    fontSize: "14px",
+    width: "100%",
     transition: " 0.35s ease",
-    color: "white",
-    [theme.breakpoints.down('sm')]: {
+    color: "#00081a",
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     },
 
     "&:active": {
-      color: "white",
+      color: "#00081a",
     },
     "&:visited": {
-      color: "white",
+      color: "#00081a",
     },
 
     "&::before": {
@@ -46,40 +54,44 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Navbar = () => {
-  const classes = useStyles()
-
+const MobileNavbar = () => {
+    const classes = useStyles()
   return (
     <Grid
       container
       item
       className={classes.linkContainer}
       direction="row"
-      justifyContent="flex-end"
+      justifyContent="space-around"
       alignItems="center"
     >
       <Grid item>
         <li className={classes.link}>
-          PROJECTS
+        <BiArrowToTop/>
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-          SKILLS
+        <FaProjectDiagram/>
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-          ABOUT
+        <FaBrain/>
         </li>
       </Grid>
       <Grid item>
         <li className={classes.link}>
-          CONTACT
+        <FaAddressCard/>
+        </li>
+      </Grid>
+      <Grid item>
+        <li className={classes.link}>
+        <FaEnvelope />
         </li>
       </Grid>
     </Grid>
   )
 }
 
-export default Navbar
+export default MobileNavbar
