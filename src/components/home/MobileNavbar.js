@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
   },
   linkContainer: {
     position: "relative",
-    height: "100px",
+    height: "25px",
   },
   icon: {
-    fontSize: "20px",
+    fontSize: "22px",
     color: "#00081a",
     cursor: "pointer",
     zIndex: "20",
@@ -35,12 +35,23 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     fontSize: "20px",
-    color: "blue",
+    color: "#00081a",
     position: "absolute",
     textAlign: "center",
-    opacity: 1,
+    opacity: 0,
     letterSpacing: "0.1em",
     transform: "translateY(20px)",
+    fontWeight: "bold",
+  },
+  indicator: {
+    position: "absolute",
+    width: "55px",
+    height: "55px",
+    borderRadius: "100%",
+    backgroundColor: "#00b2f0",
+    zIndex: 10,
+    opacity: 0,
+    border: "3px solid white",
   },
 }))
 
@@ -54,7 +65,6 @@ const MobileNavbar = () => {
   })
 
   const handleClick = (num) => {
-    console.log(num, active.activeSection, active.previousActiveSection)
     if (active?.activeSection?.id === num + 1) {
       return null
     } else if (active?.activeSection) {
@@ -69,19 +79,31 @@ const MobileNavbar = () => {
   }
 
   const iconsRef = useRef([])
+  let icon1 = iconsRef.current[0]
+  let icon2 = iconsRef.current[1]
+  let icon3 = iconsRef.current[2]
+  let icon4 = iconsRef.current[3]
   const textsRef = useRef([])
+  let text1 = textsRef.current[0]
+  let text2 = textsRef.current[1]
+  let text3 = textsRef.current[2]
+  let text4 = textsRef.current[3]
+  const indicatorsRef = useRef([])
+  let indicator1 = indicatorsRef.current[0]
+  let indicator2 = indicatorsRef.current[1]
+  let indicator3 = indicatorsRef.current[2]
+  let indicator4 = indicatorsRef.current[3]
 
   let master = gsap.timeline({
     repeat: 0,
     paused: true,
   })
 
-  const animate = (icon, text) => {
+  const animate = (icon, text, indicator) => {
     let tl = gsap
       .timeline()
       .to(icon, {
         transform: "translateY(-35px)",
-        color: "#0091ff",
       })
       .to(
         text,
@@ -91,14 +113,21 @@ const MobileNavbar = () => {
         },
         "-=0.5"
       )
+      .to(
+        indicator,
+        {
+          autoAlpha: 1,
+          transform: "translateY(-35px)",
+        },
+        "-=0.5"
+      )
   }
 
-  const animateReverse = (icon, text) => {
+  const animateReverse = (icon, text, indicator) => {
     let tl = gsap
       .timeline()
       .to(icon, {
         transform: "translateY(0px)",
-        color: "#00081a",
       })
       .to(
         text,
@@ -108,70 +137,46 @@ const MobileNavbar = () => {
         },
         "-=0.5"
       )
+      .to(
+        indicator,
+        {
+          transform: "translateY(0px)",
+          autoAlpha: 0,
+        },
+        "-=0.5"
+      )
   }
 
   switch (active?.activeSection?.id) {
     case 1:
-      master.add(animate(iconsRef.current[0], textsRef.current[0])).play()
+      master.add(animate(icon1, text1, indicator1)).play()
       break
     case 2:
-      master.add(animate(iconsRef.current[1], textsRef.current[1])).play()
+      master.add(animate(icon2, text2, indicator2)).play()
       break
     case 3:
-      master.add(animate(iconsRef.current[2], textsRef.current[2])).play()
+      master.add(animate(icon3, text3, indicator3)).play()
       break
     case 4:
-      master.add(animate(iconsRef.current[3], textsRef.current[3])).play()
+      master.add(animate(icon4, text4, indicator4)).play()
       break
   }
 
   switch (active?.previousActiveSection?.id) {
     case 1:
-      master
-        .add(animateReverse(iconsRef.current[0], textsRef.current[0]))
-        .play()
+      master.add(animateReverse(icon1, text1, indicator1)).play()
       break
     case 2:
-      master
-        .add(animateReverse(iconsRef.current[1], textsRef.current[1]))
-        .play()
+      master.add(animateReverse(icon2, text2, indicator2)).play()
       break
     case 3:
-      master
-        .add(animateReverse(iconsRef.current[2], textsRef.current[2]))
-        .play()
+      master.add(animateReverse(icon3, text3, indicator3)).play()
       break
     case 4:
-      master
-        .add(animateReverse(iconsRef.current[3], textsRef.current[3]))
-        .play()
+      master.add(animateReverse(icon4, text4, indicator4)).play()
       break
   }
 
-  /*  active.projects
-    ? master.add(animate(iconsRef.current[0], textsRef.current[0])).play()
-    : master
-        .add(animateReverse(iconsRef.current[0], textsRef.current[0]))
-        .play()
-
-  active.skills
-    ? master.add(animate(iconsRef.current[1], textsRef.current[1])).play()
-    : master
-        .add(animateReverse(iconsRef.current[1], textsRef.current[1]))
-        .play()
-
-  active.about
-    ? master.add(animate(iconsRef.current[2], textsRef.current[2])).play()
-    : master
-        .add(animateReverse(iconsRef.current[2], textsRef.current[2]))
-        .play()
-
-  active.contact
-    ? master.add(animate(iconsRef.current[3], textsRef.current[3])).play()
-    : master
-        .add(animateReverse(iconsRef.current[3], textsRef.current[3]))
-        .play()
- */
   return (
     <Grid
       container
@@ -188,6 +193,7 @@ const MobileNavbar = () => {
         justifyContent="center"
         alignItems="center"
         sm={2}
+        xs={2}
         className={classes.linkContainer}
       >
         <div
@@ -207,6 +213,12 @@ const MobileNavbar = () => {
         >
           Projects
         </div>
+        <div
+          className={classes.indicator}
+          ref={(element) => {
+            indicatorsRef.current[0] = element
+          }}
+        ></div>
       </Grid>
       <Grid
         item
@@ -215,6 +227,7 @@ const MobileNavbar = () => {
         justifyContent="center"
         alignItems="center"
         sm={2}
+        xs={2}
         className={classes.linkContainer}
       >
         <div
@@ -235,6 +248,12 @@ const MobileNavbar = () => {
           {" "}
           Skills
         </div>
+        <div
+          className={classes.indicator}
+          ref={(element) => {
+            indicatorsRef.current[1] = element
+          }}
+        ></div>
       </Grid>
       <Grid
         item
@@ -243,6 +262,7 @@ const MobileNavbar = () => {
         justifyContent="center"
         alignItems="center"
         sm={2}
+        xs={2}
         className={classes.linkContainer}
       >
         <div
@@ -262,6 +282,12 @@ const MobileNavbar = () => {
         >
           About
         </div>
+        <div
+          className={classes.indicator}
+          ref={(element) => {
+            indicatorsRef.current[2] = element
+          }}
+        ></div>
       </Grid>
       <Grid
         item
@@ -270,6 +296,7 @@ const MobileNavbar = () => {
         justifyContent="center"
         alignItems="center"
         sm={2}
+        xs={2}
         className={classes.linkContainer}
       >
         <div
@@ -289,6 +316,12 @@ const MobileNavbar = () => {
         >
           Contact
         </div>
+        <div
+          className={classes.indicator}
+          ref={(element) => {
+            indicatorsRef.current[3] = element
+          }}
+        ></div>
       </Grid>
     </Grid>
   )

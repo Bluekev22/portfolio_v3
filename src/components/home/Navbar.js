@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     transition: " 0.35s ease",
     color: "white",
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
     },
 
     "&:active": {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       height: "2px",
       bottom: "-8px",
-      backgroundColor: "#0091ff",
+      backgroundColor: "#00b2f0",
       webkitTransform: "scaleX(0)",
       transform: "scaleX(0)",
       webkitTransformOrigin: "top left",
@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
       transition: "transform 0.35s ease",
     },
     "&:hover": {
-      color: "#0091ff",
-      cursor: 'pointer',
+      color: "#00b2f0",
+      cursor: "pointer",
       "&::before": {
         transform: "scale(1)",
         webkitTransform: "scale(1)",
@@ -59,24 +59,16 @@ const Navbar = () => {
       alignItems="center"
     >
       <Grid item>
-        <li className={classes.link}>
-          PROJECTS
-        </li>
+        <li className={classes.link}>PROJECTS</li>
       </Grid>
       <Grid item>
-        <li className={classes.link}>
-          SKILLS
-        </li>
+        <li className={classes.link}>SKILLS</li>
       </Grid>
       <Grid item>
-        <li className={classes.link}>
-          ABOUT
-        </li>
+        <li className={classes.link}>ABOUT</li>
       </Grid>
       <Grid item>
-        <li className={classes.link}>
-          CONTACT
-        </li>
+        <li className={classes.link}>CONTACT</li>
       </Grid>
     </Grid>
   )
