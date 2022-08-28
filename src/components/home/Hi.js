@@ -1,9 +1,9 @@
 import React from "react"
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useLayoutEffect } from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
-import  ScrollTrigger  from "gsap/ScrollTrigger"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 const useStyles = makeStyles(() => ({
   hiContainer: { position: "relative", marginTop: "10vh" },
@@ -53,7 +53,7 @@ const Hi = () => {
         fontSize: "8vw",
         position: "absolute",
         letterSpacing: "5px",
-        top: "10.2vw",
+        top: "12.2vw",
         left: "5.5vw",
         color: "transparent",
         transform: "rotateX(-30deg) skew(40deg)",
@@ -83,7 +83,7 @@ const Hi = () => {
   }, [])
 
   //animation on scroll
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = gsap
       .timeline({
         scrollTrigger: {
@@ -91,6 +91,8 @@ const Hi = () => {
           start: "top 30%",
           end: "bottom 20%",
           scrub: 1,
+          immediateRender: false,
+          markers: true,
         },
       })
       //hi
@@ -124,8 +126,9 @@ const Hi = () => {
       alignItems="center"
       xl={6}
       lg={6}
-      md={7}
-      sm={7}
+      md={6}
+      sm={6}
+      xs={6}
       className={classes.hiContainer}
     >
       <Grid item className={classes.hi} ref={hiRef} data-text="&#60;Hi /&#62;">

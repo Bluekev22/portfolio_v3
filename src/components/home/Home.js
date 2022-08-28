@@ -7,7 +7,7 @@ import Navbar from "./Navbar"
 import MobileNavbar from "./MobileNavbar"
 import Hi from "./Hi"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   home: {
     background: "#00081a",
     zIndex: 4,
@@ -30,11 +30,25 @@ const useStyles = makeStyles(() => ({
   },
   nameContainer: {
     marginTop: "15vh",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "0vh",
+    },
   },
   name: {
-    fontSize: "6vw",
+    fontSize: "120px",
     textAlign: "center",
     marginLeft: "10vw",
+
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "80px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "80px",
+      marginLeft: "5vw",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "40px",
+    },
   },
   titlesContainer: {
     backgroundImage: "linear-gradient(90deg, #0048f0 0%, #00b2f0 100%)",
@@ -44,11 +58,30 @@ const useStyles = makeStyles(() => ({
     mozTextFillColor: "transparent",
   },
   titles: {
-    fontSize: "4vw",
+    fontSize: "80px",
     marginLeft: "10vw",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "4vw",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "40px",
+      marginLeft: "5vw",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "30px",
+    },
   },
   text: {
-    fontSize: "4vw",
+    fontSize: "80px",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "4vw",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "40px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "30px",
+    },
   },
   cursor: {
     width: "2.75vw",
@@ -64,7 +97,7 @@ const Home = () => {
   const cursorRef = useRef()
   const textRef = useRef()
 
-  const words = ["Developer.", "Designer.", "Creator."]
+  const words = ["Developer", "Designer", "Creator"]
 
   useEffect(() => {
     gsap.to(cursorRef.current, {
@@ -98,15 +131,16 @@ const Home = () => {
         container
         item
         direction="row"
-        justifyContent="space-between"
+        justifyContent="center"
         alignItems="center"
         className={classes.main}
       >
         <Grid
           xl={6}
           lg={6}
-          md={5}
-          sm={5}
+          md={6}
+          sm={12}
+          xs={12}
           container
           item
           className={classes.nameContainer}
@@ -120,7 +154,7 @@ const Home = () => {
           <Grid item className={classes.name}>
             SHANK
           </Grid>
-          <Grid item className={classes.thing}></Grid>
+
           <Grid
             container
             item
