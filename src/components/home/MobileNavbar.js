@@ -65,9 +65,9 @@ const MobileNavbar = () => {
   })
 
   const handleClick = (num) => {
-    if (active?.activeSection?.id === num + 1) {
+    if (active && active.activeSection && active.activeSection.id === num + 1) {
       return null
-    } else if (active?.activeSection) {
+    } else if (active && active.activeSection) {
       setActive({
         ...active,
         previousActiveSection: active.activeSection,
@@ -147,7 +147,7 @@ const MobileNavbar = () => {
       )
   }
 
-  switch (active?.activeSection?.id) {
+  switch (active && active.activeSection && active.activeSection.id) {
     case 1:
       master.add(animate(icon1, text1, indicator1)).play()
       break
@@ -162,7 +162,7 @@ const MobileNavbar = () => {
       break
   }
 
-  switch (active?.previousActiveSection?.id) {
+  switch (active && active.preciousActiveSection && active.preciousActiveSection.id) {
     case 1:
       master.add(animateReverse(icon1, text1, indicator1)).play()
       break
