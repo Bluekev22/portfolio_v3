@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     transition: " 0.35s ease",
     color: "white",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "24px",
+    },
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
