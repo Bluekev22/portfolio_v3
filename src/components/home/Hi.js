@@ -8,6 +8,9 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 const useStyles = makeStyles((theme) => ({
   hiContainer: { position: "relative", marginTop: "10vh", [theme.breakpoints.down("lg")]: {
     marginTop: "12vh",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "6vh",
+    },
   }, },
   hi: {
     color: "white",

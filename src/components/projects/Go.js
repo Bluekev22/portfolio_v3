@@ -2,7 +2,7 @@ import React from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   anchor: {
     textDecoration: "none",
   },
@@ -12,6 +12,18 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       textDecoration: "underline",
     },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "80px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "50px",
+  
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "60px",
+      marginTop: '5vh',
+      marginBottom: '5vh',
+    }, 
   },
 }))
 

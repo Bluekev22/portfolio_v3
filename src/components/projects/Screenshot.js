@@ -2,8 +2,11 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Grid } from "@material-ui/core"
 
-const useStyles = makeStyles(() => ({
-  screenshot: { width: "30vw" },
+const useStyles = makeStyles((theme) => ({
+  screenshot: { width: "30vw",
+  [theme.breakpoints.down("xs")]: {
+    width: "45vw"
+  },},
 }))
 
 const Screenshot = (props) => {

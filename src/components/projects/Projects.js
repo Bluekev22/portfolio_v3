@@ -21,7 +21,7 @@ import Gif from "./Gif"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin)
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   projects: {
     background: "white",
     minHeight: "110vh",
@@ -29,12 +29,30 @@ const useStyles = makeStyles(() => ({
     zIndex: 3,
     position: "relative",
   },
-  projectsHeader: { marginTop: "25vh", fontSize: "6vw", color: "#01020f" },
+  projectsHeader: { marginTop: "25vh", fontSize: "120px", textAlign: 'center',
+  [theme.breakpoints.down("lg")]: {
+      fontSize: "80px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "80px",
+  
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "50px",
+      marginTop: "15vh"
+    }, 
+    color: "#01020f" },
   projectContainer: {
     position: "absolute",
     top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: 'column',
+      marginTop: "10vh",
+      top: "35vh",
+    }, 
+   
   },
 }))
 

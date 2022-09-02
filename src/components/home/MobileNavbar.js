@@ -162,7 +162,7 @@ const MobileNavbar = () => {
       break
   }
 
-  switch (active && active.preciousActiveSection && active.preciousActiveSection.id) {
+  switch (active && active.previousActiveSection && active.previousActiveSection.id) {
     case 1:
       master.add(animateReverse(icon1, text1, indicator1)).play()
       break
