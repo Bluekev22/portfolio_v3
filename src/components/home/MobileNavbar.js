@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: "0.1em",
     transform: "translateY(20px)",
     fontWeight: "bold",
+    
   },
   indicator: {
     position: "absolute",

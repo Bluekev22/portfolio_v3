@@ -15,7 +15,7 @@ import {
 } from "react-icons/si"
 import { FaNode } from "react-icons/fa"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   skills: {
     background: "#00081a",
     minHeight: "1320px",
@@ -34,13 +34,19 @@ const useStyles = makeStyles(() => ({
     "&::after": {
       position: "absolute",
       bottom: "90%",
+      [theme.breakpoints.down("md")]: {
+        bottom: "80%",
+      },
+      [theme.breakpoints.down("sm")]: {
+        bottom: "90%",
+      },
       left: "0",
-      height: "90%",
+      height: "18%",
       width: "100%",
       content: "''",
       background: "#e0e1e6",
       transform: "skewY(5deg)",
-      zIndex: 0,
+      zIndex: 3,
     },
   },
   skillsContainer: { marginTop: "45vh", zIndex: 3 },
