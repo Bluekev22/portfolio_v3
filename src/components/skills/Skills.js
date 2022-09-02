@@ -34,12 +34,6 @@ const useStyles = makeStyles((theme) => ({
     "&::after": {
       position: "absolute",
       bottom: "90%",
-      [theme.breakpoints.down("md")]: {
-        bottom: "80%",
-      },
-      [theme.breakpoints.down("sm")]: {
-        bottom: "90%",
-      },
       left: "0",
       height: "18%",
       width: "100%",
@@ -49,20 +43,43 @@ const useStyles = makeStyles((theme) => ({
       zIndex: 3,
     },
   },
-  skillsContainer: { marginTop: "45vh", zIndex: 3 },
+  skillsContainer: { marginTop: "45vh", zIndex: 3,
+  [theme.breakpoints.down("md")]: {
+    marginTop: "55vh"
+  }, 
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "45vh"
+  },},
   header: {
-    fontSize: "6vw",
+    fontSize: "120px",
     color: "white",
     marginBottom: "8vh",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "80px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "60px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "50px",
+    }, 
   },
   skillContainer: {
     borderRadius: "40px",
-    width: "calc(50px + 10vw)",
+    width: "250px",
     background: "white",
     margin: "2.5vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.down("lg")]: {
+      width: "200px",  
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "175px", 
+    },
+    [theme.breakpoints.down("xs")]: {
+    },
     "&:hover": {
       background:
         "linear-gradient(90deg, #ff7842, #f79022, #e5a800, #cabf00, #a4d500, #81de44)",
@@ -76,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "40px",
     padding: "10px",
     textAlign: "center",
-    fontSize: "1.75vw",
+    fontSize: "30px",
     background: "linear-gradient(90deg, black, black)",
     WebkitTextFillColor: "transparent",
     WebkitBackgroundClip: "text",
@@ -84,8 +101,24 @@ const useStyles = makeStyles((theme) => ({
       WebkitTextFillColor: "transparent",
       WebkitBackgroundClip: "text",
     },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "25px",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "22px",
+    },
+    [theme.breakpoints.down("sm")]: {
+    },
   },
-  skillIcon: { color: "#00d4e1", fontSize: "1.667vw" },
+  skillIcon: { color: "#00d4e1", fontSize: "30px",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "25px",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "22px",
+  },
+  [theme.breakpoints.down("sm")]: {
+  }, },
 }))
 
 const Skills = () => {

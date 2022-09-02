@@ -33,9 +33,10 @@ const useStyles = makeStyles((theme) => ({
   projectsHeader: { marginTop: "25vh", fontSize: "120px", textAlign: 'center',
   [theme.breakpoints.down("lg")]: {
       fontSize: "80px",
+      
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "80px",
+      fontSize: "60px",
   
     },
     [theme.breakpoints.down("xs")]: {
@@ -49,13 +50,13 @@ const useStyles = makeStyles((theme) => ({
     visibility: "hidden",
     marginTop: "10vh",
     [theme.breakpoints.down("md")]: {
-      
+     
       top: "48vh",
     }, 
     [theme.breakpoints.down("xs")]: {
       flexDirection: 'column',
       marginTop: "10vh",
-      top: "35vh",
+      top: "30vh",
     }, 
    
   },
