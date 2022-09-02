@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { gsap } from "gsap"
 import Headshot from "../../assets/img/Headshot.png"
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   about: {
     background:
       "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
@@ -24,8 +24,13 @@ const useStyles = makeStyles(() => ({
     paddingLeft: "10vw",
   },
   descriptionHeadshotContainer: { marginTop: "5vh" },
-  description: { padding: "5vh 5vw 5vh 5vw" },
-  headshotContainer: { paddingLeft: "4vw" },
+  description: { 
+  padding: 0},
+  headshotContainer: {  [theme.breakpoints.up("xl")]: {
+    marginLeft: '4vw',
+  }, [theme.breakpoints.down("xl")]: {
+    marginLeft: '0vw',
+  },},
   headshot: {
     width: "325px",
     border: "2px solid #008d94",
@@ -219,8 +224,7 @@ const About = () => {
               day, I'm just a creative guy who loves to solve problems, no
               matter what they may be.
               <br />
-              <br />I enjoy biking, playing the piano, grilling, and long walks
-              on the beach.
+              <br />I enjoy biking, playing the piano, and grilling at the beach.
             </p>
           </Grid>
           <Grid item xl={3} lg={3} className={classes.headshotContainer}>
