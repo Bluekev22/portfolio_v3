@@ -10,27 +10,68 @@ const useStyles = makeStyles((theme) => ({
     background:
       "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
     minHeight: "1280px",
+    [theme.breakpoints.down("md")]: {
+      minHeight: "1650px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "1900px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      minHeight: "2000px",
+    },
     color: "white",
     position: "relative",
   },
   aboutContainer: {
     marginTop: "35vh",
-    fontSize: "35px",
+    fontSize: "40px",
+    [theme.breakpoints.down("lg")]: { marginTop: "42vh", fontSize: "38px" },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "36px",
+      justifyContent: "center",
+    },
     zIndex: 3,
   },
   header: {
-    fontSize: "6vw",
+    fontSize: "120px",
     color: "white",
     paddingLeft: "10vw",
+    [theme.breakpoints.down("lg")]: { paddingLeft: "3.5vw", fontSize: "80px" },
+    [theme.breakpoints.down("md")]: {
+      paddingLeft: "00vw",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "60px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "50px",
+    },
   },
-  descriptionHeadshotContainer: { marginTop: "5vh" },
-  description: { 
-  padding: 0},
-  headshotContainer: {  [theme.breakpoints.up("xl")]: {
-    marginLeft: '4vw',
-  }, [theme.breakpoints.down("xl")]: {
-    marginLeft: '0vw',
-  },},
+  descriptionHeadshotContainer: {
+    marginTop: "5vh",
+    [theme.breakpoints.down("xl")]: { marginLeft: "6vw" },
+    [theme.breakpoints.down("lg")]: { marginLeft: "1vw" },
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: "2vw",
+      marginTop: "8vh",
+      marginRight: "2vw",
+    },
+  },
+  description: {
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "8vh",
+      textAlign: "center",
+    },
+  },
+  headshotContainer: {
+    [theme.breakpoints.down("xl")]: { marginLeft: "8vw" },
+    [theme.breakpoints.down("lg")]: { marginLeft: "4vw" },
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "0vw",
+      justifyContent: "center",
+    },
+  },
   headshot: {
     width: "325px",
     border: "2px solid #008d94",
@@ -71,7 +112,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const About = () => {
-
   const classes = useStyles()
   let backGroundRef = useRef([])
 
@@ -212,7 +252,14 @@ const About = () => {
           alignItems="center"
           className={classes.descriptionHeadshotContainer}
         >
-          <Grid item className={classes.description} xl={8} lg={8}>
+          <Grid
+            item
+            className={classes.description}
+            xl={7}
+            lg={8}
+            md={12}
+            sm={12}
+          >
             <p>
               Hi! I'm <strong>Kevin Shank</strong>. I'm a Web Developer
               currently based in Dearborn, MI. I recently completed a boot camp
@@ -224,10 +271,19 @@ const About = () => {
               day, I'm just a creative guy who loves to solve problems, no
               matter what they may be.
               <br />
-              <br />I enjoy biking, playing the piano, and grilling at the beach.
+              <br />I enjoy biking, playing the piano, and grilling at the
+              beach.
             </p>
           </Grid>
-          <Grid item xl={3} lg={3} className={classes.headshotContainer}>
+          <Grid
+            container
+            item
+            xl={3}
+            lg={3}
+            md={12}
+            sm={12}
+            className={classes.headshotContainer}
+          >
             <img className={classes.headshot} src={Headshot} alt="" />
           </Grid>
         </Grid>

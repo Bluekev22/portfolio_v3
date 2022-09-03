@@ -9,21 +9,19 @@ const useStyles = makeStyles((theme) => ({
   go: {
     fontSize: "6vw",
     cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-    },
+    textDecoration: "underline",
+
     [theme.breakpoints.down("lg")]: {
       fontSize: "80px",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "50px",
-  
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "60px",
-      marginTop: '5vh',
-      marginBottom: '5vh',
-    }, 
+      marginTop: "5vh",
+      marginBottom: "5vh",
+    },
   },
 }))
 
