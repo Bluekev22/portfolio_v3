@@ -366,7 +366,7 @@ handleChange()
           end: "bottom 20%",
           scrub: 1,
           immediateRender: false,
-          markers: true,
+          markers: false,
         },
       })
       //hi

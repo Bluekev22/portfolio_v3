@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "50px",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "60px",
+      fontSize: "30px",
       marginTop: "5vh",
       marginBottom: "5vh",
     },

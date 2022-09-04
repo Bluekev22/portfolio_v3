@@ -11,14 +11,14 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(90deg, #b76106 0%, #b38300 10%, #999100 20%, #719400 30%, #438a15 40%, #118d23 50%, #009961 60%, #008f79 70%, #008d94 80%, #00758f 90%, #007399 100%)",
     minHeight: "1280px",
     [theme.breakpoints.down("md")]: {
-      minHeight: "1650px",
+      minHeight: "1500px",
     },
-    [theme.breakpoints.down("sm")]: {
+   /*  [theme.breakpoints.down("sm")]: {
       minHeight: "1900px",
     },
     [theme.breakpoints.down("xs")]: {
       minHeight: "2000px",
-    },
+    }, */
     color: "white",
     position: "relative",
   },
@@ -27,9 +27,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "40px",
     [theme.breakpoints.down("lg")]: { marginTop: "42vh", fontSize: "38px" },
     [theme.breakpoints.down("md")]: {
-      fontSize: "36px",
+      fontSize: "32px",
       justifyContent: "center",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "28px",
+      marginTop: "50vh",
+    },
+    
     zIndex: 3,
   },
   header: {
@@ -76,6 +81,10 @@ const useStyles = makeStyles((theme) => ({
     width: "325px",
     border: "2px solid #008d94",
     borderRadius: "2px",
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: "0vw",
+      width: "250px",
+    },
   },
   topLeftSpan: {
     position: "absolute",
@@ -90,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
   },
   topRightSpan: {
     position: "absolute",
-    bottom: "-5vw",
+    bottom: "-100px",
     left: "0",
     height: "90%",
     width: "100%",

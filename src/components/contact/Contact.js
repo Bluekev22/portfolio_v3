@@ -11,18 +11,49 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     position: "relative",
   },
-  rowContainer: { marginTop: "16vh", paddingLeft: "5vw" },
+  rowContainer: { marginTop: "16vh", paddingLeft: "5vw",
+  [theme.breakpoints.down("md")]: {
+  justifyContent: 'space-between',
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "0vh",
+    paddingLeft: "7vw",
+    }, 
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: "0vw",
+    }, },
+  emailContainer: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: 'column',
+      },
+  },
   emailHeader: {
     fontSize: "48px",
     borderRadius: "20px",
     padding: "3px",
+    [theme.breakpoints.down("md")]: {
+     
+      fontSize: '40px',
+    }, 
+    [theme.breakpoints.down("xs")]: {
+     
+      fontSize: '30px',
+    }, 
   },
-  emailLink: { textDecoration: "none" },
+  emailLink: { textDecoration: "none",},
   email: {
     fontSize: "38px",
     color: "white",
     position: "relative",
     textDecoration: "none",
+    [theme.breakpoints.down("md")]: {
+     
+      fontSize: '30px',
+    }, 
+    [theme.breakpoints.down("xs")]: {
+     
+      fontSize: '24px',
+    }, 
     "&::before": {
       content: '""',
       position: "absolute",
@@ -32,7 +63,15 @@ const useStyles = makeStyles((theme) => ({
       bottom: 0,
       left: 0,
       backgroundColor: "#0048f0",
-      transform: "scaleX(0.16)",
+      [theme.breakpoints.up("xl")]: {
+        transform: "scaleX(0.16)"
+      },
+      [theme.breakpoints.up("lg")]: {
+        transform: "scaleX(0.19)"
+      },
+      [theme.breakpoints.up("xs")]: {
+        transform: "scaleX(0.22)"
+      },
       transformOrigin: "top left",
       transition: "transform 0.35s ease",
     },
@@ -42,11 +81,30 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  connectWithMeHeader: { fontSize: "38px" },
+  connectWithMeHeader: { fontSize: "38px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: '32px',
+  },
+  [theme.breakpoints.down("sm")]: {
+   display: 'none',
+  },   },
+  iconContainer: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: '20px',
+      }, 
+      [theme.breakpoints.down("xs")]: {
+        marginTop: '35px',
+        },
+  },
   icons: {
     fontSize: "42px",
     color: "white",
-
+    [theme.breakpoints.down("md")]: {
+      fontSize: '36px',
+    }, 
+    [theme.breakpoints.down("xs")]: {
+      fontSize: '32px',
+    },
     transition: " 0.35s ease",
 
     "&:active": {
@@ -63,6 +121,13 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     bottom: "2%",
     fontSize: "20px",
+    [theme.breakpoints.down("sm")]: {
+      bottom: "10%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: '14px',
+      bottom: "13%",
+    },
   },
 }))
 
@@ -95,13 +160,16 @@ const Contact = () => {
           justifyContent="flex-start"
           alignItems="center"
           xl={4}
-          lg={4}
+          lg={5}
+          md={6}
+          sm={12}
           spacing={6}
+          className={classes.emailContainer}
         >
-          <Grid item xl={12} lg={12}>
+          <Grid item xl={12} lg={12} md={12} sm={12}>
             <h1 className={classes.emailHeader}>Email me:</h1>
           </Grid>
-          <Grid item xl={12} lg={12}>
+          <Grid item xl={12} lg={12} md={12} sm={12}>
             <a
               href="mailto:kevin@kevinshank.tech"
               className={classes.emailLink}
@@ -117,7 +185,9 @@ const Contact = () => {
           justifyContent="center"
           alignItems="center"
           xl={4}
-          lg={4}
+          lg={5}
+          md={6}
+          sm={12}
           spacing={6}
         >
           <Grid item className={classes.connectWithMeHeader}>
@@ -130,6 +200,7 @@ const Contact = () => {
             justifyContent="center"
             alignItems="center"
             spacing={5}
+            className={classes.iconContainer}
           >
             <Grid item>
               <a

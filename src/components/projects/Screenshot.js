@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core"
 const useStyles = makeStyles((theme) => ({
   screenshot: { width: "30vw",
   [theme.breakpoints.down("xs")]: {
-    width: "45vw"
+    width: "55vw"
   },},
 }))
 
