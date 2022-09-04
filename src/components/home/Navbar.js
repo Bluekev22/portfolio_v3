@@ -1,6 +1,7 @@
 import React from "react"
 import { Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 const useStyles = makeStyles((theme) => ({
   linkContainer: { marginTop: "3vh" },
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     transition: " 0.35s ease",
     color: "white",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "24px",
+      fontSize: "28px",
     },
     [theme.breakpoints.down("sm")]: {
       display: "none",
@@ -63,16 +64,46 @@ const Navbar = () => {
       alignItems="center"
     >
       <Grid item>
-        <li className={classes.link}>PROJECTS</li>
+        <Link
+          className={classes.link}
+          to="projects"
+          smooth="easeInOutQuint"
+          duration={1500}
+        >
+          PROJECTS
+        </Link>
       </Grid>
       <Grid item>
-        <li className={classes.link}>SKILLS</li>
+        <Link
+          className={classes.link}
+          to="skills"
+          smooth="easeInOutQuint"
+          offset={-125}
+          duration={3000}
+        >
+          SKILLS
+        </Link>
       </Grid>
       <Grid item>
-        <li className={classes.link}>ABOUT</li>
+        <Link
+          className={classes.link}
+          to="about"
+          smooth="easeInOutQuint"
+          offset={-100}
+          duration={3500}
+        >
+          ABOUT
+        </Link>
       </Grid>
       <Grid item>
-        <li className={classes.link}>CONTACT</li>
+        <Link
+          className={classes.link}
+          to="contact"
+          smooth="easeInOutQuint"
+          duration={4000}
+        >
+          CONTACT
+        </Link>
       </Grid>
     </Grid>
   )

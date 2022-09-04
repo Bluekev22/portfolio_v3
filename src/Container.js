@@ -29,10 +29,10 @@ const Container = () => {
         alignItems="center"
       >
         <Home />
-        <Projects />
-        <Skills />
-        <About />
-        <Contact />
+        <Projects id="projects" />
+        <Skills id="skills" />
+        <About id="about" />
+        <Contact id="contact" />
       </Grid>
     </div>
     /*      </div>

@@ -8,6 +8,7 @@ import {
   FaBrain,
   FaEnvelope,
 } from "react-icons/fa"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: "0.1em",
     transform: "translateY(20px)",
     fontWeight: "bold",
-    
   },
   indicator: {
     position: "absolute",
@@ -163,7 +163,11 @@ const MobileNavbar = () => {
       break
   }
 
-  switch (active && active.previousActiveSection && active.previousActiveSection.id) {
+  switch (
+    active &&
+    active.previousActiveSection &&
+    active.previousActiveSection.id
+  ) {
     case 1:
       master.add(animateReverse(icon1, text1, indicator1)).play()
       break
@@ -202,9 +206,16 @@ const MobileNavbar = () => {
           ref={(element) => {
             iconsRef.current[0] = element
           }}
-          onClick={() => handleClick(0)}
         >
-          <FaProjectDiagram />
+          <Link
+            to="home"
+            smooth="easeInOutQuint"
+            duration={2000}
+            offset={1100}
+            onClick={() => handleClick(0)}
+          >
+            <FaProjectDiagram />
+          </Link>
         </div>
         <div
           className={classes.text}
@@ -236,9 +247,16 @@ const MobileNavbar = () => {
           ref={(element) => {
             iconsRef.current[1] = element
           }}
-          onClick={() => handleClick(1)}
         >
-          <FaBrain />
+          <Link
+            to="skills"
+            smooth="easeInOutQuint"
+            offset={-125}
+            duration={2000}
+            onClick={() => handleClick(1)}
+          >
+            <FaBrain />
+          </Link>
         </div>
         <div
           className={classes.text}
@@ -271,9 +289,16 @@ const MobileNavbar = () => {
           ref={(element) => {
             iconsRef.current[2] = element
           }}
-          onClick={() => handleClick(2)}
         >
-          <FaAddressCard />
+          <Link
+            to="about"
+            smooth="easeInOutQuint"
+            offset={-100}
+            duration={2000}
+            onClick={() => handleClick(2)}
+          >
+            <FaAddressCard />
+          </Link>
         </div>
         <div
           className={classes.text}
@@ -305,9 +330,16 @@ const MobileNavbar = () => {
           ref={(element) => {
             iconsRef.current[3] = element
           }}
-          onClick={() => handleClick(3)}
         >
-          <FaEnvelope />
+          <Link
+            className={classes.link}
+            to="contact"
+            smooth="easeInOutQuint"
+            duration={2000}
+            onClick={() => handleClick(3)}
+          >
+            <FaEnvelope />
+          </Link>
         </div>
         <div
           className={classes.text}

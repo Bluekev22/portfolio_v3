@@ -137,6 +137,7 @@ const Home = () => {
         justifyContent="center"
         alignItems="center"
         className={classes.main}
+        id="home"
       >
         <Grid
           xl={6}
