@@ -100,8 +100,6 @@ const Home = () => {
   const cursorRef = useRef()
   const textRef = useRef()
 
-  const words = ["Developer", "Designer", "Creator"]
-
   useEffect(() => {
     gsap.to(cursorRef.current, {
       opacity: 0,
@@ -111,6 +109,8 @@ const Home = () => {
     })
 
     let masterTl = gsap.timeline({ repeat: -1 })
+
+    const words = ["Developer", "Designer", "Creator"]
 
     words.forEach((word) => {
       let tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 })

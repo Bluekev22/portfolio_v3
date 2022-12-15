@@ -43,13 +43,16 @@ const useStyles = makeStyles((theme) => ({
       zIndex: 3,
     },
   },
-  skillsContainer: { marginTop: "45vh", zIndex: 3,
-  [theme.breakpoints.down("md")]: {
-    marginTop: "55vh"
-  }, 
-  [theme.breakpoints.down("sm")]: {
-    marginTop: "45vh"
-  },},
+  skillsContainer: {
+    marginTop: "45vh",
+    zIndex: 3,
+    [theme.breakpoints.down("md")]: {
+      marginTop: "55vh",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "45vh",
+    },
+  },
   header: {
     fontSize: "120px",
     color: "white",
@@ -62,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "50px",
-    }, 
+    },
   },
   skillContainer: {
     borderRadius: "40px",
@@ -73,13 +76,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     [theme.breakpoints.down("lg")]: {
-      width: "200px",  
+      width: "200px",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "175px", 
+      width: "175px",
     },
-    [theme.breakpoints.down("xs")]: {
-    },
+    [theme.breakpoints.down("xs")]: {},
     "&:hover": {
       background:
         "linear-gradient(90deg, #ff7842, #f79022, #e5a800, #cabf00, #a4d500, #81de44)",
@@ -107,18 +109,19 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "22px",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("sm")]: {},
+  },
+  skillIcon: {
+    color: "#00d4e1",
+    fontSize: "30px",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "25px",
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "22px",
+    },
+    [theme.breakpoints.down("sm")]: {},
   },
-  skillIcon: { color: "#00d4e1", fontSize: "30px",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "25px",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "22px",
-  },
-  [theme.breakpoints.down("sm")]: {
-  }, },
 }))
 
 const Skills = () => {
@@ -130,7 +133,7 @@ const Skills = () => {
   let skillRef4 = useRef([])
 
   useEffect(() => {
-    let tl = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: skillRef1.current,
@@ -161,7 +164,7 @@ const Skills = () => {
   }, [])
 
   useEffect(() => {
-    let tl = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: skillRef2.current,
@@ -192,7 +195,7 @@ const Skills = () => {
   }, [])
 
   useEffect(() => {
-    let tl = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: skillRef3.current,
@@ -223,7 +226,7 @@ const Skills = () => {
   }, [])
 
   useEffect(() => {
-    let tl = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: skillRef4.current,

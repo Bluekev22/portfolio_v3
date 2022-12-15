@@ -359,7 +359,7 @@ const Hi = () => {
 
   //animation on scroll
   useLayoutEffect(() => {
-    const tl = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: hiRef.current,

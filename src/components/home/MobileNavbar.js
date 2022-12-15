@@ -8,7 +8,7 @@ import {
   FaBrain,
   FaEnvelope,
 } from "react-icons/fa"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -101,7 +101,7 @@ const MobileNavbar = () => {
   })
 
   const animate = (icon, text, indicator) => {
-    let tl = gsap
+    gsap
       .timeline()
       .to(icon, {
         transform: "translateY(-35px)",
@@ -125,7 +125,7 @@ const MobileNavbar = () => {
   }
 
   const animateReverse = (icon, text, indicator) => {
-    let tl = gsap
+    gsap
       .timeline()
       .to(icon, {
         transform: "translateY(0px)",
@@ -161,6 +161,8 @@ const MobileNavbar = () => {
     case 4:
       master.add(animate(icon4, text4, indicator4)).play()
       break
+    default:
+      return
   }
 
   switch (
@@ -180,6 +182,8 @@ const MobileNavbar = () => {
     case 4:
       master.add(animateReverse(icon4, text4, indicator4)).play()
       break
+    default:
+      return
   }
 
   return (
