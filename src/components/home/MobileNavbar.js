@@ -162,7 +162,6 @@ const MobileNavbar = () => {
       master.add(animate(icon4, text4, indicator4)).play()
       break
     default:
-      return
   }
 
   switch (
@@ -183,7 +182,6 @@ const MobileNavbar = () => {
       master.add(animateReverse(icon4, text4, indicator4)).play()
       break
     default:
-      return
   }
 
   return (
