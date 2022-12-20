@@ -28,37 +28,36 @@ const useStyles = makeStyles((theme) => ({
     color: "#01020f",
     zIndex: 3,
     position: "relative",
-    
   },
-  projectsHeader: { marginTop: "25vh", fontSize: "120px", textAlign: 'center',
-  [theme.breakpoints.down("lg")]: {
+  projectsHeader: {
+    marginTop: "25vh",
+    fontSize: "120px",
+    textAlign: "center",
+    [theme.breakpoints.down("lg")]: {
       fontSize: "80px",
-      
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "60px",
-  
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "30px",
-      marginTop: "20vh"
-    }, 
-    color: "#01020f" },
+      marginTop: "20vh",
+    },
+    color: "#01020f",
+  },
   projectContainer: {
     position: "absolute",
     top: "43vh",
     visibility: "hidden",
     marginTop: "10vh",
     [theme.breakpoints.down("md")]: {
-     
       top: "48vh",
-    }, 
+    },
     [theme.breakpoints.down("xs")]: {
-      flexDirection: 'column',
+      flexDirection: "column",
       marginTop: "10vh",
       top: "30vh",
-    }, 
-   
+    },
   },
 }))
 
@@ -75,9 +74,8 @@ const Projects = () => {
   useEffect(() => {
     let pro = projectsRef.current
     let header = projectsHeaderRef.current
-      const tl = gsap
-      .timeline({
-      })
+    const tl = gsap
+      .timeline({})
       .to(pro, { background: "#9bb0d2" })
       .to(
         header,
@@ -137,18 +135,17 @@ const Projects = () => {
       )
       .to(studentProfilesContainerRef.current, { autoAlpha: 1 }, "-=0.5")
       .to({}, { duration: 2 })
-      ScrollTrigger.create({
-          trigger: pro,
-          start: "bottom 100%",
-          end: "+=11250px",
-          scrub: "true",
-          pin: true,
-          pinSpacing: true,
-          invalidateOnRefresh: true,
-          animation: tl,
-      })
-       /*  ScrollTrigger.refresh() */
-   
+    ScrollTrigger.create({
+      trigger: pro,
+      start: "bottom 100%",
+      end: "+=11250px",
+      scrub: "true",
+      pin: true,
+      pinSpacing: true,
+      invalidateOnRefresh: true,
+      animation: tl,
+    })
+    /*  ScrollTrigger.refresh() */
   }, [])
 
   return (
@@ -175,10 +172,12 @@ const Projects = () => {
         className={classes.projectContainer}
         ref={betterBuyContainerRef}
         id="projects"
-        
       >
         <Screenshot screenshot={BetterBuy} />
-        <Go goColor="#f2f5ff" href="https://better-buy-shop.herokuapp.com/" />
+        <Go
+          goColor="#f2f5ff"
+          href="https://precious-alpaca-db7d9e.netlify.app/"
+        />
         <Gif gif={BetterBuyGIF} />
       </Grid>
       <Grid
@@ -189,12 +188,11 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={goldenFlightsContainerRef}
-        
       >
         <Screenshot screenshot={GoldenFlights} />
         <Go
           goColor="rgba(243, 215, 115, 255)"
-          href="https://powerful-eyrie-53621.herokuapp.com/"
+          href="https://cryptic-dawn-68163.herokuapp.com/"
         />
         <Gif gif={GoldenFlightsGIF} />
       </Grid>
@@ -206,13 +204,9 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={moviesContainerRef}
-      
       >
         <Screenshot screenshot={Movies} />
-        <Go
-          goColor="#ebfffc"
-          href="https://mels065.github.io/move-towards-the-movies/"
-        />
+        <Go goColor="#ebfffc" href="https://delicate-fox-7f242e.netlify.app/" />
         <Gif gif={MoveTowardsTheMoviesGIF} />
       </Grid>
       <Grid
@@ -223,7 +217,6 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={hatchwaysContainerRef}
-       
       >
         <Screenshot screenshot={HatchwaysChatApp} />
         <Go
@@ -240,13 +233,9 @@ const Projects = () => {
         alignItems="center"
         className={classes.projectContainer}
         ref={studentProfilesContainerRef}
-      
       >
         <Screenshot screenshot={StudentProfiles} />
-        <Go
-          goColor="#90278E"
-          href="https://hatchways-student-profile.herokuapp.com/"
-        />
+        <Go goColor="#90278E" href="https://student-profile-975.vercel.app/" />
         <Gif gif={StudentProfilesGIF} />
       </Grid>
     </Grid>
